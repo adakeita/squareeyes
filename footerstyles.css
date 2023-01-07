@@ -1,0 +1,32 @@
+:root {
+    --se_main: #11b0e1
+  }
+
+#footer {
+    height: 55px;
+    border-top: 2px solid var(--se_main);
+    margin-top: 50px;
+}
+
+.footer-content {
+    padding-bottom: 10px;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.footer_element {
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.contact-icon {
+    width: 30px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
