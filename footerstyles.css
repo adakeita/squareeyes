@@ -2,13 +2,8 @@
     --se_main: #11b0e1
   }
 
-#footer {
-    height: 55px;
-    border-top: 2px solid var(--se_main);
-    margin-top: 50px;
-}
-
 .footer-content {
+    margin-top: 50px;
     padding-bottom: 10px;
 }
 

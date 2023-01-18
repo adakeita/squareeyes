@@ -29,6 +29,7 @@ body a {
 .logoimage {
     flex: 1;
     padding-top: 10px;
+    padding-left: 10px;
 }
 
 .logo {
@@ -37,7 +38,7 @@ body a {
 }
 
 .navmenu {
-flex: 2;
+    flex: 2;
 }
 
 
@@ -57,4 +58,16 @@ flex: 2;
 .list-item:hover {
     transform: scale(1.1);
     text-decoration: line-through;
+}
+
+
+@media screen and (max-width: 580px) {
+
+    .list-item {
+        margin: 0 auto;
+        font-size: 15px;
+        text-align: right;
+        display: inline;
+    }
+
 }
