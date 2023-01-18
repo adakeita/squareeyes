@@ -271,6 +271,9 @@ input[type="submit"]:hover {
   display: flex;
   flex-wrap: wrap;
 }
+.info-container{
+  margin: 0 50px;
+}
 
 .info-text-content {
   font-size: 18px;
@@ -297,11 +300,10 @@ input[type="submit"]:hover {
 /*purchase*/
 
 .purchase-image {
-  width: 500px;
-    margin: auto;
+    text-align: center;
 }
 
-.order-card {
+.moviesummary {
   text-align: center;
 }
 
