@@ -8,7 +8,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
-    margin: 0px 35px 65px;
+    margin: 15px 35px 10px;
 }
 
 .home-link {
@@ -18,7 +18,7 @@ body {
 
 .logoimage {
     flex: 1;
-    max-width: 250px;
+    max-width: 290px;
 }
 
 .navmenu {
@@ -35,8 +35,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    text-decoration: none;
+    justify-content: space-evenly;
+    flex: 1;
 }
 
 .list-item::marker {

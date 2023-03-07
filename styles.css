@@ -1,20 +1,15 @@
 :root {
-  --se_main: #11b0e1
+  --se_main: #11b0e1;
 }
 
 body {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   background-color: black;
   color: white;
   width: 100vw;
   margin: 0;
   overflow-x: hidden;
-  scrollbar-width:thin;
-}
-
-
-* {
-  outline: solid red 2px;
+  scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
@@ -26,6 +21,28 @@ body {
   margin: 0px 40px;
   text-align: center;
   scrollbar-width: thin;
+}
+
+.index-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.testimg {
+  width: 100%;
+}
+
+.index_btn { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  width: 200px;
+}
+
+.index_btn:hover {
+  transform: scale(1.1);
+  transition: 0.25s ease-in-out;
 }
 
 .buffer-div {
@@ -62,19 +79,13 @@ body {
   height: 180px;
 }
 
-
-.explore {
-  margin: 10px auto;
-  text-align: center;
-}
-
 .explore_btn {
   height: 100px;
 }
 
 .explore_btn:hover {
   transform: scale(1.1);
-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 /*LOGIN_PAGE*/
@@ -83,28 +94,6 @@ h2 {
   font-weight: 300;
   text-align: center;
 }
-
-/*a,
-a:link,
-a:visited,
-a:active {
-  color: #ffffff;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-a:focus,
-a:hover,
-a:link:focus,
-a:link:hover,
-a:visited:focus,
-a:visited:hover,
-a:active:focus,
-a:active:hover {
-  color: #329dd5;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}*/
 
 .loginform-container {
   width: 500px;
@@ -151,7 +140,7 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-color: var(--se_main)
+  border-color: var(--se_main);
 }
 
 input[type="text"]:focus:invalid,
@@ -160,21 +149,21 @@ input[type="password"]:focus:invalid {
   border-color: #cc1e2b;
 }
 
-input[type="text"]:valid~.validation,
-input[type="password"]:valid~.validation {
+input[type="text"]:valid ~ .validation,
+input[type="password"]:valid ~ .validation {
   display: block;
-  border-color: #0C0;
+  border-color: #0c0;
 }
 
-input[type="text"]:valid~.validation span,
-input[type="password"]:valid~.validation span {
-  background: #0C0;
+input[type="text"]:valid ~ .validation span,
+input[type="password"]:valid ~ .validation span {
+  background: #0c0;
   position: absolute;
   border-radius: 6px;
 }
 
-input[type="text"]:valid~.validation span:first-child,
-input[type="password"]:valid~.validation span:first-child {
+input[type="text"]:valid ~ .validation span:first-child,
+input[type="password"]:valid ~ .validation span:first-child {
   top: 30px;
   left: 14px;
   width: 20px;
@@ -183,8 +172,8 @@ input[type="password"]:valid~.validation span:first-child {
   transform: rotate(-45deg);
 }
 
-input[type="text"]:valid~.validation span:last-child,
-input[type="password"]:valid~.validation span:last-child {
+input[type="text"]:valid ~ .validation span:last-child,
+input[type="password"]:valid ~ .validation span:last-child {
   top: 35px;
   left: 8px;
   width: 11px;
@@ -230,7 +219,7 @@ input[type="submit"]:hover {
 .movie-wrapper_rows {
   display: flex;
   flex-wrap: wrap;
-  TEXT-ALIGN: center;
+  text-align: center;
 }
 
 .movie-card {
@@ -254,8 +243,8 @@ input[type="submit"]:hover {
 }
 
 #aboutmovimg {
- width: 80%;
- text-align: center;
+  width: 80%;
+  text-align: center;
 }
 
 .i-container-row {
@@ -268,7 +257,7 @@ input[type="submit"]:hover {
   display: flex;
   flex-wrap: wrap;
 }
-.info-container{
+.info-container {
   margin: 0 50px;
 }
 
@@ -297,7 +286,7 @@ input[type="submit"]:hover {
 /*purchase*/
 
 .purchase-image {
-    text-align: center;
+  text-align: center;
 }
 
 .moviesummary {
