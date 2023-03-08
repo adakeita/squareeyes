@@ -10,6 +10,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   scrollbar-width: thin;
+  line-height: 1.5;
 }
 
 ::-webkit-scrollbar {
@@ -31,14 +32,14 @@ body {
 .index-image-content {
   position: absolute;
   width: 50%;
-  top: 50%;
+  top: 53%;
   left: 25%;
 }
 
 .index-image-text {
   font-size: 20px;
   text-align: center;
-  margin: 10% 0% 0% 0%;
+  margin: 0% 0% 0% 0%;
 }
 
 .testimg {
@@ -63,6 +64,10 @@ body {
 .index_btn_image:hover {
   transform: scale(1.1);
   transition: 0.25s ease-in-out;
+}
+
+.landscape_wrapper {
+  width: 100%;
 }
 
 .buffer-div {
