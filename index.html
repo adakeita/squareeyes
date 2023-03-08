@@ -17,9 +17,11 @@
     <header>
         <div class="nav-content">
             <div class="logoimage">
-                <a class="home-link" href="index.html">
-                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="logo">
-                </a>
+                <div class="logo_image">
+                    <a class="home-link" href="index.html">
+                        <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="logo">
+                    </a>
+                </div>
             </div>
             <nav class="navmenu">
                 <div class="navbar-container">
@@ -33,9 +35,9 @@
         </div>
     </header>
     <div class="frontpage-content container">
-        <img class="testimg" src="./movies/moviemedley.png">
+        <img class="main_img" src="./movies/moviemedley.png">
         <div class="index-image-content">
-            <h4 class="index-image-text">
+            <h4 class="index-image-text index_text">
                 Discover interesting indie films and support small filmmakers.
             </h4>
             <div class="index-btns">
@@ -53,54 +55,79 @@
         </div>
     </div>
     <main class="content-container">
+        <div class="stream_here">
+            <h3>Stream on all your devices</h3>
+            <div class="stream_column">
+                <div class="stream_item">
+                    <h4>TV</h4>
+                    <img class="stream_image" src="./iconsbuttons/tv.png" alt="">
+                </div>
+                <div class="stream_item">
+                    <h4>Laptop</h4>
+                    <img class="stream_image" src="./iconsbuttons/laptop.png" alt="">
+                </div>
+                <div class="stream_item">
+                    <h4>Console</h4>
+                    <img class="stream_image" src="./iconsbuttons/gaming.png" alt="">
+                </div>
+                <div class="stream_item">
+                    <h4>Tablet</h4>
+                    <img class="stream_image" src="./iconsbuttons/tablet.png" alt="">
+                </div>
+            </div>
+        </div>
         <div class="download_wrapper">
             <div class="download_element">
-            <h3 class="download_text">DOWNLOAD AND WATCH OFFLINE.
-                <br>
-                ANYTIME. ANYWHERE.
-            </h3>
-            <button>Learn More</button>
-        </div>
+                <h3 class="download_text index_text">DOWNLOAD AND WATCH OFFLINE.
+                    <br>
+                    ANYTIME. ANYWHERE.
+                </h3>
+                <button>Learn More</button>
+            </div>
             <div class="landscape_wrapper download_element">
-                <img src="phonelandscape.png" alt="landscape phone">
+                <img class="landscape_image" src="phonelandscape.png" alt="landscape phone">
             </div>
         </div>
         <div class="frequently">
-            <h1 class="faq-heading">FAQ'S</h1>
-            <section class="faq-container">
-                <div class="faq-1">
-                    <!-- faq question -->
-                    <h1 class="faq-page">What is an FAQ Page?</h1>
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
-                            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
-                            aperiam.
-                            Perspiciatis, porro!</p>
+            <h2 class="faq-heading">Frequently Asked Questions</h2>
+            <section class="faq-section">
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        What is SquareEyes?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>
+                            SquareEyes is a movie rental, purchase and theatre all in one!
+                            We pride ourself on sharing all our proceeds with the creators so that you can have easy
+                            access to quality indie films with the click of a button.
+                        </p>
                     </div>
                 </div>
-                <hr class="hr-line">
-                <div class="faq-2">
-                    <!-- faq question -->
-                    <h1 class="faq-page">Why do you need an FAQ page?</h1>
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
-                            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
-                            aperiam.
-                            Perspiciatis, porro!</p>
+                <hr class="faq-divider">
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        How does it work?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>
+                            When you buy a movie from us 60% of the proceed goes directly to the creater of the movie.
+                            That way you get to give concrete support to the people who make the art you consume!
+                        </p>
                     </div>
                 </div>
-                <hr class="hr-line">
-                <div class="faq-2">
-                    <!-- faq question -->
-                    <h1 class="faq-page">Does it improves the user experience of a website?</h1>
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
-                            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
-                            aperiam.
-                            Perspiciatis, porro!</p>
+                <hr class="faq-divider">
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        What if I don't like the movie?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>
+                            As long as you have watched less then half of the movie,
+                            you can request a full refund.
+                        </p>
                     </div>
                 </div>
             </section>

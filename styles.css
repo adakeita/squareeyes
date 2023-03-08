@@ -1,5 +1,7 @@
 :root {
   --se_main: #11b0e1;
+  --text: #ffffff;
+  --grey: #908989;
 }
 
 body {
@@ -42,7 +44,7 @@ body {
   margin: 0% 0% 0% 0%;
 }
 
-.testimg {
+.main_img {
   width: 100%;
 }
 
@@ -70,76 +72,109 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 7% 1%;
+  margin: 10% 0%;
+}
+/*Index_download_section*/
+.stream_here {
+  margin: 10% 0%;
+}
+
+.stream_column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stream_item {
+  flex: 1;
+}
+
+.stream_image {
+  width: 80%;
 }
 
 .download_element {
   flex: 1;
 }
 
+.landscape_image {
+  width: 80%;
+}
+
 .buffer-div {
   height: 70px;
 }
 
+/*FAQ_section*/
+.frequently {
+  margin: 10%;
+}
 
-.faq-heading{
-  border-bottom: #fff;
-  padding: 10px 45px;
+.faq-heading {
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 1px solid var(--text);
+  padding: 20px 40px;
+  margin: 0;
 }
-.faq-container{
-display: flex;
-justify-content: center;
-flex-direction: column;
-}
-.hr-line{
-width: 60%;
-margin: auto;
 
+.faq-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-/* Style the buttons that are used to open and close the faq-page body */
-.faq-page {
-  /* background-color: #eee; */
-  color: #444;
+
+.faq-divider {
+  width: 60%;
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--text);
+}
+
+.faq-question {
+  color: var(--grey);
   cursor: pointer;
-  padding: 30px 20px;
+  padding: 10px 19px;
   width: 60%;
   border: none;
   outline: none;
   transition: 0.4s;
-  margin: auto;
+  margin: 0 auto;
+  font-weight: normal;
 }
-.faq-body{
-  margin: auto;
-  /* text-align: center; */
- width: 50%; 
- padding: auto;
- 
+
+.faq-question:hover {
+  color: var(--text);
+  transition: 0.3s ease-in-out;
 }
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.faq-page:hover {
-  background-color: #F9F9F9;
-}
-/* Style the faq-page panel. Note: hidden by default */
-.faq-body {
-  padding: 0 18px;
-  background-color: white;
+.faq-answer {
+  margin: 0 auto;
+  width: 50%;
+  padding: 0;
   display: none;
-  overflow: hidden;
 }
-.faq-page:after {
-  content: '\02795';
-  /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
+
+.faq-answer--open {
+  display: block;
+}
+
+.faq-answer--closed {
+  display: none;
+}
+
+.faq-question .faq-toggle {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--se_main);
   float: right;
   margin-left: 5px;
 }
-.active:after {
+
+.faq-question.active .faq-toggle {
   content: "\2796";
   /* Unicode character for "minus" sign (-) */
 }
-/*Description*/
+
+/*LOGIN_PAGE*/
 
 .text {
   color: #ffffff;
@@ -412,18 +447,16 @@ input[type="submit"]:hover {
   height: auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
   .index-image-content {
     position: relative;
     display: flex;
     flex-wrap: wrap;
   }
-
-  .index_btn {
-    position: relative;
-  }
-
   .index-btns {
     position: relative;
+  }
+  .index_text {
+    font-size: 90%;
   }
 }
