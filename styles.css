@@ -28,19 +28,39 @@ body {
   width: 100%;
 }
 
+.index-image-content {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 25%;
+}
+
+.index-image-text {
+  font-size: 20px;
+  text-align: center;
+  margin: 10% 0% 0% 0%;
+}
+
 .testimg {
   width: 100%;
 }
 
-.index_btn { 
+.index-btns {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  color: white;
-  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.index_btn:hover {
+.index-btn {
+  flex: 0.5;
+  text-align: center;
+}
+
+.index_btn_image {
+  width: 60%;
+}
+
+.index_btn_image:hover {
   transform: scale(1.1);
   transition: 0.25s ease-in-out;
 }
@@ -319,4 +339,20 @@ input[type="submit"]:hover {
 .team {
   width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .index-image-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .index_btn {
+    position: relative;
+  }
+
+  .index-btns {
+    position: relative;
+  }
 }
