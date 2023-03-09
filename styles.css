@@ -462,6 +462,10 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    text-align: center;
+  }
+
   .index-image-content {
     position: static;
     display: flex;
@@ -495,5 +499,10 @@ input[type="submit"]:hover {
 
   .faq-question .faq-toggle {
     color: var(--text);
+  }
+
+  .question_p {
+    margin: 0px 0px 15px -30px;
+    width: 140%;
   }
 }
