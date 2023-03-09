@@ -15,6 +15,7 @@ window.addEventListener("load", () => {
         const isScrolled = scrollTop > 60;
         navbar.classList.toggle("scrolled", isScrolled);
         logo.classList.toggle("small", isScrolled);
+        menuIcon.classList.toggle("scrolled",isScrolled);
         hamburger.classList.toggle("hide", !isScrolled);
         menu.classList.toggle("hide", isScrolled);
     });

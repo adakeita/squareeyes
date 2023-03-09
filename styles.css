@@ -461,16 +461,39 @@ input[type="submit"]:hover {
   height: auto;
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 600px) {
   .index-image-content {
-    position: relative;
+    position: static;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
   }
   .index-btns {
     position: relative;
   }
+
+  .index-btn {
+    flex: 0.5;
+    text-align: center;
+  }
   .index_text {
     font-size: 90%;
+  }
+
+  .faq-question {
+    width: 80%;
+  }
+
+  .faq-question:hover {
+    width: 90%;
+  }
+
+  .faq-divider {
+    width: 100%;
+  }
+
+  .faq-question .faq-toggle {
+    color: var(--text);
   }
 }
