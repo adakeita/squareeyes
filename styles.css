@@ -493,16 +493,27 @@ input[type="submit"]:hover {
     width: 90%;
   }
 
+  .question_p {
+    text-align: center;
+    width: 140%;
+  }
+
+  .faq-answer {
+    margin: 0 auto;
+    width: 80%;
+    padding: 0;
+    display: none;
+  }
+  .question_p {
+    text-align: center;
+    width: 100%;
+  }
+
   .faq-divider {
     width: 100%;
   }
 
   .faq-question .faq-toggle {
     color: var(--text);
-  }
-
-  .question_p {
-    margin: 0px 0px 15px -30px;
-    width: 140%;
   }
 }
