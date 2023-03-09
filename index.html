@@ -15,24 +15,23 @@
 
 <body>
     <header>
-        <div class="nav-content">
-            <div class="logoimage">
-                <div class="logo_image">
-                    <a class="home-link" href="index.html">
-                        <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="logo">
-                    </a>
+        <nav id="navbar">
+            <a class="home" href="#default">
+                <div class="logo_image_container">
+                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="logo">
                 </div>
-            </div>
-            <nav class="navmenu">
-                <div class="navbar-container">
-                    <ul class="navbar">
-                        <li class="list-item"><a class="menu-link" href="about.html">ABOUT</a></li>
-                        <li class="list-item"><a class="menu-link" href="login.html">LOGIN</a></li>
-                        <li class="list-item"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+            </a>
+            <ul class="navbar_links menu">
+                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li class="nav-item"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
+            </ul>
+            <button class="hamburger">
+
+                <img src="iconsbuttons/menu.png" class="menuIcon">
+                <img src="iconsbuttons/menu.png" class="closeIcon">
+              </button>
+        </nav>
     </header>
     <div class="frontpage-content container">
         <img class="main_img" src="./movies/moviemedley.png">
