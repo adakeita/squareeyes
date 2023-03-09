@@ -250,6 +250,10 @@ a {
     .item_show.show {
        display: contents;
     }
+
+    .menu-link {
+        padding: 5% 0%;
+    }
 }
 
 @media only screen and (max-width: 450px) {
