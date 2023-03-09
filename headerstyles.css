@@ -185,13 +185,13 @@ a {
     }    
     
     #navbar.scrolled .logoimage {
-        margin: 2% 3% 2% 6%;
+        margin: 3% 3% 2% -45%;
     }
 
     .logoimage {
         width: 45%;
         transition: 0.2s ease-in-out;
-        margin-left: 4%;
+        margin-left: -40%;
         margin-top: 2%;
     }
 
@@ -237,12 +237,5 @@ a {
         display: block;
         margin-right: 1rem;
         margin-top: 0.5rem;
-    }
-
-    .index-image-content {
-        position: static;
-        width: 50%;
-        top: 65%;
-        left: 25%;
     }
 }
