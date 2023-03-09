@@ -466,6 +466,10 @@ input[type="submit"]:hover {
     text-align: center;
   }
 
+  .main_img {
+    margin-top: 27%;
+}
+
   .index-image-content {
     position: static;
     display: flex;
