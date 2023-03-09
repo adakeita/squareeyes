@@ -242,27 +242,34 @@ a {
     .logoimage {
         width: 80%;
         margin-left: 0%;
-    }
+        }
+        
+        .logoimage.small {
+        width: 50%;
+        }
+        
+        .menuIcon {
+        width: 40px;
+        margin-top: 80%;
+        transition: 0.2s ease-in-out;
+        }
 
-    .logoimage.small {
-        width: 40%;
-    }
-
-    .menuIcon {
-        width: 35px;
-        margin-top: 85%;
-    }
-
-    .menuIcon.scrolled {
+        .menuIcon.scrolled {
+            width: 40px;
+            margin-top: -3%;
+            transition: 0.2s ease-in-out;
+        }
+        
+        .menuIcon.scrolled {
         margin-top: -15%;
-    }
-
-    #navbar.scrolled .logoimage {
-        margin: 4% 0% 4% -45%;
-    }
-
-    #navbar.scrolled {
-        height: 6%;
-    }
+        }
+        
+        #navbar.scrolled .logoimage {
+        margin: 4% 0% 4% -40%;
+        }
+        
+        #navbar.scrolled {
+        height: 8%;
+        }
 
 }
