@@ -521,3 +521,9 @@ input[type="submit"]:hover {
     color: var(--text);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .main_img {
+    margin-top: 40%;
+}
+}
