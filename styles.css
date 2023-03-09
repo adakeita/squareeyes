@@ -468,7 +468,7 @@ input[type="submit"]:hover {
 
   .main_img {
     margin-top: 27%;
-}
+  }
 
   .index-image-content {
     position: static;
@@ -477,6 +477,11 @@ input[type="submit"]:hover {
     flex-direction: column;
     margin: auto;
   }
+
+  .index-image-text {
+    margin: 5% 0% 0% 0%;
+  }
+
   .index-btns {
     position: relative;
   }
@@ -525,5 +530,5 @@ input[type="submit"]:hover {
 @media screen and (max-width: 600px) {
   .main_img {
     margin-top: 40%;
-}
+  }
 }

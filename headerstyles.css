@@ -188,7 +188,7 @@ a {
         width: 45%;
         margin-left: -40%;
         margin-top: 2%;
-        transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in;
     }
 
     #navbar.scrolled .logoimage {
