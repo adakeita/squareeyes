@@ -462,8 +462,19 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 600px) {
+  /*GLOBAL*/
   body {
     text-align: center;
+  }
+
+  .content-container {
+    margin: 45% 0%;
+  }
+
+  /*Index_Page*/
+
+  .page-container {
+    margin: 0 10% 0 10%;
   }
 
   .main_img {
@@ -524,6 +535,11 @@ input[type="submit"]:hover {
 
   .faq-question .faq-toggle {
     color: var(--text);
+  }
+
+  /*ABOUT_PAGE*/
+  .content-container {
+    margin: 45% 0%;
   }
 }
 
