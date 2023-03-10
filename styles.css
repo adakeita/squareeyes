@@ -4,17 +4,19 @@
   --grey: #908989;
 }
 
-/*GLOBAL*/
+/*
+GLOBAL
+*/
 
 body {
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: black;
   color: white;
   width: 100vw;
   margin: 0;
   overflow-x: hidden;
   scrollbar-width: thin;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 ::-webkit-scrollbar {
@@ -22,13 +24,26 @@ body {
   color: white;
 }
 
-.content-container {
-  margin: 0px 40px;
-  text-align: center;
-  scrollbar-width: thin;
+.h3_header {
+  font-size: 25px;
+  margin: 5% 0% 0% 1%;
 }
 
-/*INDEX_PAGE*/
+.content-container {
+  margin: 25% 5%;
+}
+
+.image{
+  width: 100%;
+}
+
+/*
+INDEX_PAGE
+*/
+
+.page-container {
+
+}
 
 .index-image-container {
   position: relative;
@@ -93,6 +108,7 @@ body {
 
 /*Index_download_section*/
 .download_wrapper {
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -188,7 +204,48 @@ body {
   /* Unicode character for "minus" sign (-) */
 }
 
-/*LOGIN_PAGE*/
+/*
+ABOUT
+*/
+
+.director_image {
+  width: 100%;
+}
+
+.story_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.story {
+  padding: 1%;
+}
+
+.story_text_container {
+  flex: 2;
+}
+
+.story_image_container {
+  flex: 1;
+  padding: 1%;
+}
+.story_image {
+  width: 100%;
+}
+.team_image_container {
+  text-align: center;
+  margin: auto;
+  padding: 5% 0% 5% 0%;
+}
+
+.team_image {
+  width: 90%;
+}
+
+/*
+LOGIN_PAGE
+*/
 
 .text {
   color: #ffffff;

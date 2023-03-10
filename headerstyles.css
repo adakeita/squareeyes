@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Rajdhani", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
 
@@ -56,7 +56,7 @@ a {
 }
 
 .item_show {
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     border-radius: 5%;
 }
@@ -85,7 +85,7 @@ a {
     align-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     background-color: black;
     visibility: visible;
     position: absolute;

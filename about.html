@@ -12,16 +12,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="headerstyles.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="footerstyles.css">    
+    <link rel="stylesheet" href="footerstyles.css">
     <script src="script.js" async defer></script>
-    <title>Squareyes About</title>
+    <title>About Us</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <nav id="navbar">
             <a class="home" href="index.html">
                 <div class="logo_image_container">
@@ -29,36 +29,64 @@
                 </div>
             </a>
             <ul class="navbar_links menu">
-                <li class="nav-item item_show"><a class="menu-link" href="index.html">HOME</a></li>
                 <li class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="login.html">SIGN UP</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="index.html">HOME</a></li>
                 <li class="nav-item item_show"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
             </ul>
             <button class="hamburger">
 
                 <img src="iconsbuttons/menu.png" class="menuIcon">
                 <img src="iconsbuttons/cross.png" class="closeIcon">
-              </button>
+            </button>
         </nav>
     </header>
-    <div class="content-container">
+    <main class="content-container">
         <div class="aboutus">
-            <img class="team" src="./images/team.png" alt="team-image">
-            <div class="text">
-                <h3>Our Story</h3>
-                <p class="story">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis placeat debitis eveniet dolorem
-                    corporis molestias, nisi quis et, quos facilis qui provident architecto voluptatem nam? Ratione
-                    aliquid
-                    quis provident recusandae. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit.
-                    Quibusdam assumenda,
-                    eveniet quae nobis maxime atque ipsum voluptas id iste recusandae
-                    laboriosam perspiciatis debitis adipisci fugiat consectetur libero
-                    tenetur culpa sunt.
+            <img class="director_image" src="./images/director.png" alt="image of director">
+            <div class="story_container">
+                <h3 class="h3_header story_header about_header">Our Story</h3>
+                <div class="story_row">
+                    <div class="story story_text_container">
+                        <p class="story_text">
+                            SquareEyes was founded by film enthusiasts frustrated by the limited options for discovering
+                            and supporting independent filmmakers. Our platform connects content watchers with small
+                            filmmakers creating incredible stories that often go unrecognized. We allow audiences from
+                            all over the world to discover and purchase high-quality videos directly from the creators.
+                            Our mission is to be the go-to destination for film lovers who want to support independent
+                            creators and discover exciting new stories.
+                        </p>
+                    </div>
+                    <div class="story story_image_container">
+                        <img class="story_image image" src="./images/together.png" alt="watching together">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team_container">
+            <div class="team team_image_container">
+                <img class="team_image image" src="./images/team.png" alt="team in meeting">
+            </div>
+            <h3 class="h3_header team_header about_header">Our Team</h3>
+            <div class="team team_text_container">
+                <p class="team_text">
+                    At SquareEyes, our team is dedicated to supporting independent filmmakers to ensure their work is
+                    showcased well
+                    and bringing their work to a suitable audience. With a diverse range of backgrounds and experiences,
+                    we
+                    bring a wealth of knowledge and expertise to every aspect of our platform.
+                    <br>
+                    From our founders to our developers and customer service representatives, every member of our team
+                    shares a love for cinema and a commitment to connecting content watchers with the best films.
+                </p>
+                <p class="team_text">
+                    But we are more than our employed team, and we stay commited to fostering a good relationship with
+                    our community, you can read more about that <a href="community.html"><em>here</em></a>.
                 </p>
             </div>
         </div>
-    </div>
+
+    </main>
     <footer class="container-footer">
         <div class="footer-content">
             <div class="footer-row">
