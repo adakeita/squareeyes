@@ -461,6 +461,9 @@ input[type="submit"]:hover {
   height: auto;
 }
 
+/*
+MEDIAQUERIES
+*/
 @media screen and (max-width: 600px) {
   /*GLOBAL*/
   body {
@@ -503,6 +506,10 @@ input[type="submit"]:hover {
   }
   .index_text {
     font-size: 90%;
+  }
+
+  .landscape_image {
+    width: 90%;
   }
 
   .faq-question {
