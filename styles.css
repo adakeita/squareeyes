@@ -30,10 +30,10 @@ body {
 }
 
 .content-container {
-  margin: 25% 5%;
+  margin: 20% 10% 5%;
 }
 
-.image{
+.image {
   width: 100%;
 }
 
@@ -42,7 +42,6 @@ INDEX_PAGE
 */
 
 .page-container {
-
 }
 
 .index-image-container {
@@ -244,6 +243,58 @@ ABOUT
 }
 
 /*
+COMMUNITY_PAGE
+*/
+
+.community_image_container {
+  text-align: center;
+}
+
+.community_image {
+  width: 90%;
+}
+/*Reviews*/
+
+.review_image_wrapper {
+}
+
+.review-wrapper_rows {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 5% 0%;
+}
+
+.review {
+  flex: 1;
+}
+
+.reviewer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  padding: 0% 5%;
+}
+
+.review-text {
+  text-align: center;
+}
+
+.review_image_wrapper {
+  flex: 1;
+  padding: 0% 5%;
+}
+
+.reviewpic {
+  width: 100%;
+  border-radius: 5%;
+}
+
+/*
 LOGIN_PAGE
 */
 
@@ -252,28 +303,6 @@ LOGIN_PAGE
   font-size: 20px;
   line-height: 1.5;
   margin: 0 45px;
-}
-
-/*Reviews*/
-.review-wrapper_rows {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-.review {
-  flex: 1;
-}
-
-.review-text {
-  text-align: center;
-}
-
-.reviewpic {
-  border-radius: 5%;
-  width: 225px;
-  height: 180px;
 }
 
 .explore_btn {
