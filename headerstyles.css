@@ -1,21 +1,6 @@
-:root {
-    --se_main: #11b0e1;
-    --text: #ffffff;
-    --grey: #908989;
-    --navScroll: #00000090;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-}
 
 a {
     color: var(--text);
-}
-
-::marker {
-    content: "";
 }
 
 /* Default */

@@ -1,5 +1,5 @@
 const API_KEY = '4f8ed672bca5d88dde2fcbb70a60657c';
-
+document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
 
 window.addEventListener("load", () => {
     const navbar = document.getElementById("navbar");

@@ -1,80 +1,81 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
 
 <head>
-    <meta name="title" content="Squareeyes">
-    <meta name="description" content="Info Scream Squareeyes">
-    <meta name="keywords" content="movies, film, art">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="headerstyles.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footerstyles.css">
-    <title>Scream Squareyes</title>
-    <script src="" async defer></script>
+    <script src="script.js" async defer></script>
+    <title>Our Community</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="nav-content">
-            <div class="logoimage">
-                <a href="index.html">
-                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="logo">
-                </a>
-            </div>
-            <nav class="navmenu">
-                <div class="navbar-container">
-                    <ul class="navbar">
-                        <li class="list-item"><a class="menu-link" href="login.html">LOG OUT</a></li>
-                    </ul>
+    <header>
+        <nav id="navbar">
+            <a class="home" href="index.html">
+                <div class="logo_image_container">
+                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="">
                 </div>
-            </nav>
-        </div>
-    </header>
-    <div class="content-container">
-        <div class="image-container">
-            <a href="https://www.youtube.com/watch?v=-TfkyBWEoWY&ab_channel=ONEMedia">
-                <img id="aboutmovimg" src="./movies/mainmovie.png" alt="Scream-movie poster and link">
             </a>
+            <ul class="navbar_links menu">
+                <li class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="signup.html">SIGNUP</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="index.html">HOME</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="about.html">ABOUT</a></li>
+            </ul>
+            <button class="hamburger" aria-label="menu">
+                <img src="iconsbuttons/menu.png" class="menuIcon" alt="menu icon">
+                <img src="iconsbuttons/cross.png" class="closeIcon" alt="close icon">
+            </button>
+        </nav>
+    </header>
+    <main class="content-container">
+        <div class="Trailer_wrapper">
+            <div class="movie_clip">
+                <iframe width="100%" height="100%"
+                    src="https://www.youtube-nocookie.com/embed/beToTslH17s?controls=0&amp;start=5&mute=1&cc_lang_pref=en&cc_load_policy=1"
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </div>
         </div>
-
         <div class="info-container">
             <div class="i-container-row">
-                <div class="infobtns">
-                    <div class="review-btn info_btn">
-                        <a href=https://www.imdb.com/title/tt11245972>
-                            <img class="btnimages" src="./iconsbuttons/imdb.png" alt="imdb button">
+                <div class="rating_btn_wrapper">
+                    <div class="rating_btn buy_rating_element">
+                        <a class="rating_link" href="">
+                            <img class="btnimages" src="iconsbuttons/imdb.png" alt="imdb button">
                         </a>
                     </div>
-                    <div class=" review-btn info_btn">
-                        <a href=https://www.rottentomatoes.com/m/scream_2022>
-                            <img class="btnimages" src="./iconsbuttons/rt.png" alt="rotten tomatoes button">
+                    <div class="rating_btn buy_rating_element">
+                        <a class="rating_link" href="">
+                            <img class="btnimages" src="iconsbuttons/rt.png" alt="rottentomatoes button">
                         </a>
                     </div>
-                    <div class=" cartbtn info_btn">
-                        <a href=purchase.html>
-                            <img class="cartimage btnimages" src="./iconsbuttons/buy.png" alt="purchase button">
-                        </a>
-                    </div>
+                </div>
+                <div class="cart_btn buy_rating_element">
+                    <a class="rating_link" href="">
+                        <img class="btnimages cart-btn" src="iconsbuttons/imdb.png" alt="imdb button">
+                    </a>
                 </div>
             </div>
             <div class="info-text-content">
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati fugit laboriosam, temporibus
-                    aperiam
-                    neque possimus fuga voluptatem, sapiente suscipit ab mollitia cum totam veniam, amet
-                    exercitationem
-                    molestias. Libero, quasi sunt.
-                </p>
+                <div class="movie_headline">
+                    <h3 class="trailer_header_text">Scream</h3>
+
+                    <p>
+                        25 years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new
+                        killer
+                        dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the
+                        town's deadly past.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+    </main>
     <footer class="container-footer">
         <div class="footer-content">
             <div class="footer-row">

@@ -2,6 +2,7 @@
   --se_main: #11b0e1;
   --text: #ffffff;
   --grey: #908989;
+  --navScroll: #00000090;
 }
 
 /*
@@ -22,6 +23,10 @@ body {
 ::-webkit-scrollbar {
   width: 1px;
   color: white;
+}
+
+::marker {
+  content: "";
 }
 
 .h3_header {
@@ -497,50 +502,34 @@ BROWSEINDEX_PAGE
 
 /*ABOUTMOVVIE*/
 
-.image-container {
-  text-align: center;
-}
-
-#aboutmovimg {
-  width: 80%;
-  text-align: center;
-}
-
 .i-container-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
-
-.infobtns {
-  display: flex;
-  flex-wrap: wrap;
-}
-.info-container {
-  margin: 0 50px;
-}
-
-.info-text-content {
-  font-size: 18px;
-  line-height: 1.5;
-  height: 300px;
-  margin: auto;
-}
-
-.btncontainer {
-  display: flex;
-}
-
-.info_btn {
-  display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.btnimages {
-  width: 50px;
-  padding: 20px;
+.rating_btn_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
 }
+
+.rating_btn {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  width: 200px;
+}
+
+.cart_btn {
+  flex: 1;
+}
+
+.btnimages {
+  width: 100%;
+}
+
 
 /*purchase*/
 
