@@ -2,6 +2,7 @@
     --se_main: #11b0e1;
     --text: #ffffff;
     --grey: #908989;
+    --navScroll: #00000090;
 }
 
 body {
@@ -130,6 +131,7 @@ a {
 #navbar.scrolled {
     transition: 0.2s ease-in-out;
     height: 17%;
+    background-color: var(--navScroll);
 }
 
 #navbar.scrolled .logoimage {

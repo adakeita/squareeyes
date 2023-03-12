@@ -1,3 +1,6 @@
+const API_KEY = '4f8ed672bca5d88dde2fcbb70a60657c';
+
+
 window.addEventListener("load", () => {
     const navbar = document.getElementById("navbar");
     const hamburger = navbar.querySelector(".hamburger");
@@ -15,7 +18,7 @@ window.addEventListener("load", () => {
         const isScrolled = scrollTop > 60;
         navbar.classList.toggle("scrolled", isScrolled);
         logo.classList.toggle("small", isScrolled);
-        menuIcon.classList.toggle("scrolled",isScrolled);
+        menuIcon.classList.toggle("scrolled", isScrolled);
         hamburger.classList.toggle("hide", !isScrolled);
         menu.classList.toggle("hide", isScrolled);
     });

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="headerstyles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footerstyles.css">
+    <script src="script.js" async defer></script>
+    <title>Browse</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <a class="home" href="index.html">
+                <div class="logo_image_container">
+                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="">
+                </div>
+            </a>
+            <ul class="navbar_links menu">
+                <li class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="signup.html">SIGNUP</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="index.html">HOME</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="about.html">ABOUT</a></li>
+            </ul>
+            <button class="hamburger" aria-label="menu">
+                <img src="iconsbuttons/menu.png" class="menuIcon" alt="menu icon">
+                <img src="iconsbuttons/cross.png" class="closeIcon" alt="close icon">
+            </button>
+        </nav>
+    </header>
+    <main class="content-container">
+        <div class="movie_clip">
+            <iframe class="batman-clip" width="100%" height="100%"
+                src="https://www.youtube.com/embed/mqqft2x_Aa4?loop=1&controls=0&amp;start=5&autoplay=1&controls=1&playlist=mqqft2x_Aa4&mute=1&cc_lang_pref=en&cc_load_policy=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture=0;"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="browse_index_row new_movies_container">
+            <h3 class="index_movie_header">New Movies</h3>
+            <div class="movies_row">
+                <div id="movie-container">
+                    <h4 class="movie movie_title">HOBBS AND SHAW</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/hobbs.jpeg" alt="thumbnail hobbs-and-shaw">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Universal Pictures</p>
+                    </div>
+                </div>
+                <div id="movie-container">
+                    <h4 class="movie movie_title">GODZILLA</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/godzilla.jpeg" alt="thumbnail godzilla">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Legendary Pictures</p>
+                    </div>
+                </div>
+                <div id="movie-container">
+                    <h4 class="movie movie_title">ONCE UPON A TIME IN HOLLYWOOD</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/onceupon.jpeg"
+                            alt="thumbnail once-upon-a-time-in-hollywood">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Columbia Pictures</p>
+                    </div>
+                </div>
+                <div id="movie-container">
+                    <h4 class="movie movie_title">SCREAM</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/scream.jpeg" alt="thumbnail scream">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Dimension Films</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="browse_index_row new_movies_container">
+            <h3 class="index_movie_header">We think you'll like</h3>
+            <div class="movies_row">
+                <div id="movie-container">
+                    <h4 class="movie movie_title">SWEETHEART</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/sweetheart.jpeg" alt="thumbnail sweetheart">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Blumhouse Production</p>
+                    </div>
+                </div>
+                <div id="movie-container">
+                    <h4 class="movie movie_title">THE ADAMS FAMILY</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/addams.jpeg" alt="thumbnail adams-family">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Metro-Goldwyn-Mayer</p>
+                    </div>
+                </div>
+                <div id="movie-container">
+                    <h4 class="movie movie_title">THE BATMAN</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/batman.jpeg" alt="thumbnail batman">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Warner Bros. Pictures</p>
+                    </div>
+                </div>
+                <div id="movie-container">
+                    <h4 class="movie movie_title">TOY STORY 4</h4>
+                    <div class="movie movie_thumb">
+                        <img class="poster_img" src="./movies/toystory.jpeg" alt="thumbnail toy-story-4">
+                    </div>
+                    <div class="movie production_company">
+                        <p class="company_p">Pixar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-footer">
+        <div class="footer-content">
+            <div class="footer-row">
+                <div class="direct-contact footer_element">
+                    <p class="connect-p footer-p">Call us</p>
+                    <a href="https://www.whatsapp.com/"><img class="contact-icon" src="./iconsbuttons/telephone.png"
+                            alt="call"></a>
+                </div>
+                <div class="connect-socials footer_element">
+                    <p class="connect-p footer-p">Or E-mail</p>
+                    <a href="https://mail.google.com/"><img class="contact-icon" src="./iconsbuttons/email.png"
+                            alt="email us"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
