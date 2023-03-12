@@ -519,14 +519,13 @@ BROWSEINDEX_PAGE
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  width: 200px;
 }
 
 .cart_btn {
   flex: 1;
 }
 
-.btnimages {
+.rating_btn_img {
   width: 100%;
 }
 
