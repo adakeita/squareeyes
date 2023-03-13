@@ -97,6 +97,7 @@ INDEX_PAGE
 .stream_column {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .stream_item {
