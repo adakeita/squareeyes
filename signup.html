@@ -33,21 +33,24 @@
         </nav>
     </header>
     <main class="page-container">
-        <div class="login">
-            <h1 class="header login-header header_signup_login login-h1">Login</h1>
+        <div class="signup">
+            <h1 class="signup-header header_signup_login signup_header">Sign Up</h1>
             <form>
-                <label class="label username-label" for="username">Username:</label>
+                <label class="label label_username" for="username">Username:</label>
                 <input type="text" id="username" name="username"><br>
 
-                <label class="label password-label" for="password">Password:</label>
+                <label class="label label_password" for="password">Password:</label>
                 <input type="password" id="password" name="password"><br>
 
-                <input class="btn_signup_login login-btn login_btn" type="button" value="Log In"
-                    onclick="authenticate(false)">
-                <input class="btn_signup_login login_btn login-btn" type="button" value="Sign Up"
-                    onclick="location.href='signup.html'">
+                <label class="label label_password" for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword"><br>
+
+                <input class="btn_signup_login signup-btn signup_btn" type="button" value="Sign Up"
+                    onclick="authenticate(true)">
+                <input type="button" value="Cancel" onclick="location.href='login.html'">
             </form>
-            <div class="buffer-div"></div>
+        </div>
+        <div class="buffer-div"></div>
     </main>
     <footer id="footer">
         <div class="footer-content">

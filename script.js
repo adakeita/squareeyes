@@ -1,6 +1,48 @@
 const API_KEY = '4f8ed672bca5d88dde2fcbb70a60657c';
 document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
 
+function authenticate(isSignUp) {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    let confirmPassword = "";
+
+    if (isSignUp) {
+        confirmPassword = document.getElementById("confirmPassword").value;
+        if (!confirmPassword) {
+            alert("Please confirm password.");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+
+        if (localStorage.getItem(username)) {
+            alert("Username already exists.");
+            return false;
+        }
+
+        localStorage.setItem(username, password);
+        window.location.href = "login.html";
+        return true;
+    }
+
+    if (!username || !password) {
+        alert("Please enter both username and password.");
+        return false;
+    }
+
+    if (localStorage.getItem(username) === password) {
+        window.location.href = "index.html";
+        return true;
+    }
+
+    alert("Invalid username or password.");
+    return false;
+}
+
+
 window.addEventListener("load", () => {
     const navbar = document.getElementById("navbar");
     const hamburger = navbar.querySelector(".hamburger");
