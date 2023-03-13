@@ -684,6 +684,6 @@ MEDIAQUERIES
 
 @media screen and (max-width: 450px) {
   .main_img {
-    margin-top: 40%;
+    margin-top: 10%;
   }
 }
