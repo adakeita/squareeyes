@@ -118,13 +118,13 @@ INDEX_PAGE
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 5% 0%;
-  padding: 3% 0%;
+  margin: 5% 5%;
+  padding: 5% 5%;
 }
 
 .download-header {
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
 }
 
 .download_element {
@@ -309,13 +309,15 @@ COMMUNITY_PAGE
 LOGIN_PAGE
 */
 
-.login, .signup {
+.login,
+.signup {
   padding: 5%;
   margin: 0% auto;
   width: 40%;
 }
 
-.login-header, .signup-header {
+.login-header,
+.signup-header {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -446,6 +448,15 @@ BROWSEINDEX_PAGE
 }
 
 .buy_movie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+}
+
+.buy_item {
   flex: 1;
 }
 
@@ -521,7 +532,7 @@ ABOUTMOV_PAGE
 /*
 MEDIAQUERIES
 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   /*GLOBAL*/
   body {
     text-align: center;
@@ -560,6 +571,11 @@ MEDIAQUERIES
   .index_text {
     font-size: 90%;
   }
+
+  .download_wrapper {
+    margin: 5% 0%;
+    padding: 5% 0%;
+}
 
   .landscape_image {
     width: 90%;
@@ -610,7 +626,8 @@ ABOUTMOV_PAGE
   /*
   LOGIN_PAGE
   */
-  .login, .signup {
+  .login,
+  .signup {
     width: 80%;
   }
 }

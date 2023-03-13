@@ -45,13 +45,25 @@
         <div class="info-container">
             <div class="i-container-row">
                 <div class="buy_movie">
-                    <a class="purchase_link" href="purchase.html">
-                        <div class="rating_btn cart_btn">
-                            <div class="cart_image_wrapper">
-                                <img class="cart_btn_img" src="./iconsbuttons/buy.png" alt="button to purhase site">
+                    <div class="buy_item">
+                        <a class="purchase_link" href="purchase.html">
+                            <div class="rating_btn cart_btn">
+                                <div class="cart_image_wrapper">
+                                    <img class="cart_btn_img" src="./iconsbuttons/buy.png" alt="button to purhase site">
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="buy_item">
+                        <a class="purchase_link" href="cart.html">
+                            <div class="rating_btn cart_btn">
+                                <div class="cart_image_wrapper">
+                                    <img class="cart_btn_img" src="./iconsbuttons/add-to-cart.png"
+                                        alt="button to cart site">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div class="rating">
                     <a class="rating_link" href="https://www.rottentomatoes.com/m/scream_2022">
@@ -71,20 +83,28 @@
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="info-text-content">
-                <div class="movie_headline">
-                    <h3 class="trailer_header_text">Scream</h3>
+                <div class="info-text-content">
+                    <div class="movie_headline">
+                        <h3 class="trailer_header_text">Scream</h3>
 
-                    <p>
-                        25 years after a streak of brutal murders shocked the quiet town of Woodsboro, California, a new
-                        killer
-                        dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the
-                        town's deadly past.
-                    </p>
+                        <p>
+                            25 years after a streak of brutal murders shocked the quiet town of Woodsboro, California, a
+                            new
+                            killer
+                            dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from
+                            the
+                            town's deadly past.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="cart-sidebar">
+                <button class="close-cart-btn">&times;</button>
+                <h3>My Cart</h3>
+                <ul class="cart-items"></ul>
+                <p>Total: $<span class="cart-total">0.00</span></p>
+                <button class="checkout-btn">Checkout</button>
+              </div>
     </main>
     <footer class="container-footer">
         <div class="footer-content">
