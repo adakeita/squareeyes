@@ -445,7 +445,6 @@ input[type="submit"]:hover {
 BROWSEINDEX_PAGE
 */
 
-
 .movie_clip {
   width: 100%;
   height: 455px;
@@ -501,7 +500,6 @@ BROWSEINDEX_PAGE
   font-size: 13px;
 }
 
-
 /*ABOUTMOVVIE*/
 
 .i-container-row {
@@ -550,8 +548,6 @@ BROWSEINDEX_PAGE
 .cart_btn_image_wrapper {
   width: 30%;
 }
-
-
 
 /*purchase*/
 
@@ -670,17 +666,13 @@ MEDIAQUERIES
     width: 100%;
   }
 
-  .faq-question .faq-toggle {
-    color: var(--text);
-  }
-
   /*ABOUT_PAGE*/
   .story_row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
-}
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -695,4 +687,5 @@ MEDIAQUERIES
     justify-content: space-around;
     align-items: center;
     margin: 10px -25px;
+  }
 }
