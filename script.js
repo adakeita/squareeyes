@@ -12,16 +12,17 @@ window.addEventListener("load", () => {
     menu.classList.add("closed");
     closeIcon.classList.add("hide");
 
-    window.addEventListener("scroll", () => {
-        const logo = navbar.querySelector(".logoimage");
+    function fixNavbar() {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const isScrolled = scrollTop > 60;
+        const isScrolled = scrollTop > 0;
         navbar.classList.toggle("scrolled", isScrolled);
-        logo.classList.toggle("small", isScrolled);
         menuIcon.classList.toggle("scrolled", isScrolled);
         hamburger.classList.toggle("hide", !isScrolled);
         menu.classList.toggle("hide", isScrolled);
-    });
+    }
+
+    window.addEventListener("scroll", fixNavbar);
+    fixNavbar();
 
     hamburger.addEventListener("click", () => {
         if (menu.classList.contains("closed")) {

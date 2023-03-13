@@ -35,7 +35,7 @@ body {
 }
 
 .content-container {
-  margin: 12% 6% 5%;
+  margin: 5% 5% 5%;
 }
 
 .image {
@@ -54,7 +54,7 @@ INDEX_PAGE
 .index-image-content {
   position: absolute;
   width: 50%;
-  top: 65%;
+  top: 55%;
   left: 25%;
 }
 
@@ -66,7 +66,7 @@ INDEX_PAGE
 
 .main_img {
   width: 100%;
-  margin-top: 23%;
+  margin-top: 7%;
 }
 
 .index-btns {
@@ -121,7 +121,7 @@ INDEX_PAGE
   flex: 1;
 }
 
-.landscape_image {
+.landscape-image {
   width: 75%;
 }
 
@@ -195,6 +195,7 @@ INDEX_PAGE
 }
 
 .faq-question .faq-toggle {
+  background-color: black;
   font-size: 20px;
   font-weight: bold;
   color: var(--se_main);
@@ -507,27 +508,48 @@ BROWSEINDEX_PAGE
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-}
-
-.rating_btn_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-
+  margin-top: 5%;
 }
 
 .rating_btn {
+  max-width: 150px;
+  padding: 0% 10%;
+}
+
+.cart_btn_img {
+  width: 100%;
+}
+
+.rating {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  flex: 2;
+  justify-content: flex-end;
+}
+
+.buy_movie {
   flex: 1;
 }
 
-.cart_btn {
-  flex: 1;
+.rating_image_wrapper {
+  width: 100%;
 }
 
 .rating_btn_img {
   width: 100%;
+  border-radius: 5%;
 }
+
+.cart_image_wrapper {
+  width: 100%;
+}
+
+.cart_btn_image_wrapper {
+  width: 30%;
+}
+
 
 
 /*purchase*/
