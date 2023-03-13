@@ -687,4 +687,12 @@ MEDIAQUERIES
   .main_img {
     margin-top: 10%;
   }
+
+  .stream_column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px -10px;
 }
