@@ -89,6 +89,37 @@ INDEX_PAGE
   transition: 0.25s ease-in-out;
 }
 
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+#browse_btn,
+#mymovies_btn {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#browse_btn .index-btn,
+#mymovies_btn .index-btn {
+  flex: 0.5;
+  text-align: center;
+}
+
+#browse_btn .index_btn_image,
+#mymovies_btn .index_btn_image {
+  width: 60%;
+}
+
+#browse_btn .index_btn_image:hover,
+#mymovies_btn .index_btn_image:hover {
+  transform: scale(1.1);
+  transition: 0.25s ease-in-out;
+}
 /*Index_stream_section*/
 .stream_here {
   padding: 5% 5%;
@@ -562,6 +593,7 @@ MEDIAQUERIES
 
   .index-btns {
     position: relative;
+    margin-top: 5%;
   }
 
   .index-btn {
@@ -569,20 +601,34 @@ MEDIAQUERIES
     text-align: center;
   }
   .index_text {
-    font-size: 90%;
+    font-size: 80%;
+  }
+
+  .buffer-div {
+    height: 10%;
+}
+
+  .stream_here {
+    padding: 5% 1%;
   }
 
   .download_wrapper {
     margin: 5% 0%;
     padding: 5% 0%;
-}
+  }
 
   .landscape_image {
     width: 90%;
   }
 
+  .faq-heading {
+    font-weight: 600;
+    font-size: 80%;
+  }
+
   .faq-question {
     width: 80%;
+    font-size: 80%;
   }
 
   .faq-question:hover {
@@ -644,6 +690,11 @@ ABOUTMOV_PAGE
     justify-content: space-around;
     align-items: center;
     margin: 10px -25px;
+  }
+
+  .download-header {
+    font-size: 80%;
+    margin-bottom: 10px;
   }
   /*
 ABOUTMOV_PAGE

@@ -23,6 +23,7 @@
             </a>
             <ul class="navbar_links menu">
                 <li class="nav-item item_show"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li id="logout-btn" class="nav-item item_show"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
                 <li class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
                 <li class="nav-item item_show"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
             </ul>
@@ -38,114 +39,133 @@
             <h4 class="index-image-text index_text">
                 Discover interesting indie films and support small filmmakers.
             </h4>
-            <div class="index-btns">
-                <div class="index-btn">
+            <div class="buffer-div"></div>
+            <div class="index-btns" id="login-btns">
+                <div class="index-btn" id="login-btn">
                     <a href="login.html">
                         <img class="index_btn_image" src="./iconsbuttons/login.png" alt="login btn image">
                     </a>
                 </div>
-                <div class="index-btn">
+                <div class="index-btn" id="signup-btn">
                     <a href="signup.html">
                         <img class="index_btn_image" src="./iconsbuttons/signup.png" alt="signup btn image">
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="buffer-div"></div>
-    </div>
-    <main class="page-container">
-        <div class="stream_here">
-            <h2 class="download-header">Stream on all your devices</h2>
-            <div class="stream_column">
-                <div class="stream_item">
-                    <h3 class="download-header">TV</h3>
-                    <img class="stream_image" src="./iconsbuttons/tv.png" alt="tv-icon">
+            <div class="index-btns" id="loggedin-btns">
+                <div class="index-btn" id="browse-btn">
+                    <a href="browseindex.html">
+                        <img id="browse-btn-image" class="index_btn_image" src="./iconsbuttons/browse.png"
+                            alt="browse btn image">
+                    </a>
                 </div>
-                <div class="stream_item">
-                    <h3 class="download-header">Laptop</h3>
-                    <img class="stream_image" src="./iconsbuttons/laptop.png" alt="laptop-icon">
-                </div>
-                <div class="stream_item">
-                    <h3 class="download-header">Console</h3>
-                    <img class="stream_image" src="./iconsbuttons/gaming.png" alt="console-icon">
-                </div>
-                <div class="stream_item">
-                    <h3 class="download-header">Tablet</h3>
-                    <img class="stream_image" src="./iconsbuttons/tablet.png" alt="tablet/phone-icon">
+                <div class="index-btn" id="mymovies-btn">
+                    <a href="mymovies.html">
+                        <img id="mymovies-btn-image" class="index_btn_image" src="./iconsbuttons/mymovies.png"
+                            alt="mymovies btn image">
+                    </a>
                 </div>
             </div>
+            <div class="buffer-div"></div>
         </div>
-        <div class="download_wrapper">
-            <div class="download_element">
-                <h2 class="download_text index_text">Download and watch offline.
-                    <br>
-                    Anytime. Anywhere.</h2>
-            </div>
-            <div class="landscape_wrapper download_element">
-                <img class="landscape_image" src="phonelandscape.png" alt="landscape phone">
-            </div>
-        </div>
-        <div class="frequently">
-            <h1 class="faq-heading">Frequently Asked Questions</h1>
-            <article aria-labelledby="faq-heading" class="faq-section">
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        What is SquareEyes?
-                        <button aria-expanded="false" class="faq-toggle">+</button>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>
-                            SquareEyes is the movie vendor for the total cinema experience with the click of a button!
-                            We pride ourselves on sharing all our proceeds with the creators so that you can have easy
-                            access to quality indie films with the click of a button.
-                        </p>
+        <main class="page-container">
+            <div class="stream_here">
+                <h2 class="download-header">Stream on all your devices</h2>
+                <div class="stream_column">
+                    <div class="stream_item">
+                        <h3 class="download-header">TV</h3>
+                        <img class="stream_image" src="./iconsbuttons/tv.png" alt="tv-icon">
+                    </div>
+                    <div class="stream_item">
+                        <h3 class="download-header">Laptop</h3>
+                        <img class="stream_image" src="./iconsbuttons/laptop.png" alt="laptop-icon">
+                    </div>
+                    <div class="stream_item">
+                        <h3 class="download-header">Console</h3>
+                        <img class="stream_image" src="./iconsbuttons/gaming.png" alt="console-icon">
+                    </div>
+                    <div class="stream_item">
+                        <h3 class="download-header">Tablet</h3>
+                        <img class="stream_image" src="./iconsbuttons/tablet.png" alt="tablet/phone-icon">
                     </div>
                 </div>
-                <hr class="faq-divider">
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        How does it work?
-                        <button aria-expanded="false" class="faq-toggle">+</button>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>
-                            When you buy a movie from us 60% of the proceeds go directly to the creator of the movie.
-                            That way you get to give concrete support to the people who make the art you consume!
-                        </p>
-                    </div>
+            </div>
+            <div class="download_wrapper">
+                <div class="download_element">
+                    <h2 class="download_text index_text">Download and watch offline.
+                        <br>
+                        Anytime. Anywhere.
+                    </h2>
                 </div>
-                <hr class="faq-divider">
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        Are there refunds?
-                        <button aria-expanded="false" class="faq-toggle">+</button>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>
-                            We strive for satisfaction on every purchase, but just in case. As long as you have watched
-                            less than half of the movie, you can request a full refund.
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </main>
-    <footer id="footer">
-        <div class="footer-content">
-            <div class="footer-row">
-                <div class="direct-contact footer_element">
-                    <p class="connect-p footer-p">Call us</p>
-                    <a href="https://www.whatsapp.com/"><img class="contact-icon" src="./iconsbuttons/telephone.png"
-                            alt="call"></a>
-                </div>
-                <div class="connect-socials footer_element">
-                    <p class="connect-p footer-p">Or connect with us here</p>
-                    <a href="https://mail.google.com/"><img class="contact-icon" src="./iconsbuttons/email.png"
-                            alt="email us"></a>
+                <div class="landscape_wrapper download_element">
+                    <img class="landscape_image" src="phonelandscape.png" alt="landscape phone">
                 </div>
             </div>
-        </div>
-    </footer>
+            <div class="frequently">
+                <h1 class="faq-heading">Frequently Asked Questions</h1>
+                <article aria-labelledby="faq-heading" class="faq-section">
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            What is SquareEyes?
+                            <button aria-expanded="false" class="faq-toggle">+</button>
+                        </h3>
+                        <div class="faq-answer">
+                            <p>
+                                SquareEyes is the movie vendor for the total cinema experience with the click of a
+                                button!
+                                We pride ourselves on sharing all our proceeds with the creators so that you can have
+                                easy
+                                access to quality indie films with the click of a button.
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="faq-divider">
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            How does it work?
+                            <button aria-expanded="false" class="faq-toggle">+</button>
+                        </h3>
+                        <div class="faq-answer">
+                            <p>
+                                When you buy a movie from us 60% of the proceeds go directly to the creator of the
+                                movie.
+                                That way you get to give concrete support to the people who make the art you consume!
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="faq-divider">
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            Are there refunds?
+                            <button aria-expanded="false" class="faq-toggle">+</button>
+                        </h3>
+                        <div class="faq-answer">
+                            <p>
+                                We strive for satisfaction on every purchase, but just in case. As long as you have
+                                watched
+                                less than half of the movie, you can request a full refund.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="footer-row">
+                    <div class="direct-contact footer_element">
+                        <p class="connect-p footer-p">Call us</p>
+                        <a href="https://www.whatsapp.com/"><img class="contact-icon" src="./iconsbuttons/telephone.png"
+                                alt="call"></a>
+                    </div>
+                    <div class="connect-socials footer_element">
+                        <p class="connect-p footer-p">Or connect with us here</p>
+                        <a href="https://mail.google.com/"><img class="contact-icon" src="./iconsbuttons/email.png"
+                                alt="email us"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 
 </html>
