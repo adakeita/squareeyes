@@ -57,6 +57,7 @@ INDEX_PAGE
 }
 
 .index-image-content {
+  margin-top: 5%;
   position: absolute;
   width: 50%;
   top: 45%;
@@ -634,7 +635,7 @@ MEDIAQUERIES
 
   .download-header {
     margin-bottom: 10px;
-}
+  }
 
   .download_wrapper {
     margin: 15% 0%;
