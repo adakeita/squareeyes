@@ -570,10 +570,16 @@ ABOUTMOV_PAGE
 /*
 MEDIAQUERIES
 */
-@media screen and (max-width: 600px) {
+
+@media all and (device-width: 768px) {
   .index-image-content {
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: -35%;
+  }
+}
+
+@media all and (device-width: 820px) {
+  .index-image-content {
+    margin-top: -35%;
   }
 }
 

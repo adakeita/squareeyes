@@ -16,21 +16,29 @@
 <body>
     <header>
         <nav id="navbar">
-            <a class="home" href="index.html">
+            <a class="home" href="#default">
                 <div class="logo_image_container">
-                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="">
+                    <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="blue logo SquareEyes">
                 </div>
             </a>
-            <ul class="navbar_links menu">
-                <li class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
-                <li class="nav-item item_show"><a class="menu-link" href="signup.html">SIGNUP</a></li>
-                <li class="nav-item item_show"><a class="menu-link" href="index.html">HOME</a></li>
+            <ul class="navbar_links static menu default">
                 <li class="nav-item item_show"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li id="logout-btn" class="nav-item item_show"><a class="menu-link" href="#"
+                        onClick="logout()">LOGOUT</a></li>
+                <li id="login-btn" class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li id="login-btn" class="nav-item item_show"><a class="menu-link" href="browseindex.html">BROWSE</a>
+                </li>
+                <li id="login-btn" class="nav-item item_show"><a class="menu-link" href="mymovies.html">MY MOVIES</a>
+                </li>
+                <li id="login-btn" class="nav-item item_show"><a class="menu-link" href="signup.html">SIGNUP</a></li>
+                <li class="nav-item item_show"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
             </ul>
-            <button class="hamburger" aria-label="menu">
-                <img src="iconsbuttons/menu.png" class="menuIcon" alt="menu icon">
-                <img src="iconsbuttons/cross.png" class="closeIcon" alt="close icon">
-            </button>
+            <div class="button-container hide">
+                <button class="hamburger">
+                    <img src="iconsbuttons/menu.png" class="menuIcon" alt="menu icon">
+                    <img src="iconsbuttons/cross.png" class="closeIcon" alt="close icon">
+                </button>
+            </div>
         </nav>
     </header>
     <main class="content-container">
@@ -104,7 +112,7 @@
                 <ul class="cart-items"></ul>
                 <p>Total: $<span class="cart-total">0.00</span></p>
                 <button class="checkout-btn">Checkout</button>
-              </div>
+            </div>
     </main>
     <footer class="container-footer">
         <div class="footer-content">
