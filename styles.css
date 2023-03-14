@@ -42,6 +42,11 @@ body {
   width: 100%;
 }
 
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
 /*
 INDEX_PAGE
 */
@@ -54,14 +59,14 @@ INDEX_PAGE
 .index-image-content {
   position: absolute;
   width: 50%;
-  top: 55%;
+  top: 45%;
   left: 25%;
 }
 
 .index-image-text {
   font-size: 20px;
   text-align: center;
-  margin: 0% 0% 0% 0%;
+  margin: 0;
 }
 
 .main_img {
@@ -69,7 +74,7 @@ INDEX_PAGE
   margin-top: 7%;
 }
 
-.index-btns {
+.index-options {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
@@ -91,10 +96,11 @@ INDEX_PAGE
 
 .hidden {
   display: none;
+  visibility: hidden;
 }
 
 .visible {
-  display: flex;
+  visibility: visible;
 }
 
 #browse_btn,
@@ -563,6 +569,13 @@ ABOUTMOV_PAGE
 /*
 MEDIAQUERIES
 */
+@media screen and (max-width: 600px) {
+  .index-image-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 550px) {
   /*GLOBAL*/
   body {
@@ -574,6 +587,10 @@ MEDIAQUERIES
   }
 
   /*Index_Page*/
+
+  .index-heading {
+    font-size: 100%;
+  }
 
   .page-container {
     margin: 0 10% 0 10%;
@@ -587,11 +604,17 @@ MEDIAQUERIES
     margin: auto;
   }
 
-  .index-image-text {
-    margin: 5% 0% 0% 0%;
+  .index-options {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
   }
 
-  .index-btns {
+  .index-image-buffer {
+    flex: 1;
+  }
+
+  .index-options {
     position: relative;
     margin-top: 5%;
   }
@@ -600,21 +623,22 @@ MEDIAQUERIES
     flex: 0.5;
     text-align: center;
   }
-  .index_text {
-    font-size: 80%;
-  }
 
   .buffer-div {
     height: 10%;
-}
-
-  .stream_here {
-    padding: 5% 1%;
   }
 
+  .stream_here {
+    padding: 0;
+  }
+
+  .download-header {
+    margin-bottom: 10px;
+}
+
   .download_wrapper {
-    margin: 5% 0%;
-    padding: 5% 0%;
+    margin: 15% 0%;
+    padding: 0% 5%;
   }
 
   .landscape_image {
@@ -623,7 +647,6 @@ MEDIAQUERIES
 
   .faq-heading {
     font-weight: 600;
-    font-size: 80%;
   }
 
   .faq-question {

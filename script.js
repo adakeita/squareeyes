@@ -1,7 +1,7 @@
-const loginBtn = document.getElementById('login-btn');
-const logoutBtn = document.getElementById('logout-btn');
-const loginBtns = document.getElementById('login-btns');
-const loggedinBtns = document.getElementById('loggedin-btns');
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+const loginBtns = document.getElementById("login-btns-container");
+const loggedinBtns = document.getElementById("loggedin-btns-container");
 
 let userIsLoggedIn = false;
 if (localStorage.getItem("currentUser")) {
@@ -10,11 +10,19 @@ if (localStorage.getItem("currentUser")) {
 
 if (loginBtns && loggedinBtns) {
     if (userIsLoggedIn) {
-        loginBtns.classList.add('hidden');
-        loggedinBtns.classList.remove('hidden');
+        loginBtn.classList.add("hidden")
+        loginBtns.classList.add("hidden");
+        loggedinBtns.classList.remove("hidden");
+        logoutBtn.classList.remove("hidden");
+        loggedinBtns.classList.add("visible");
+        logoutBtn.classList.add("visible");
+
     } else {
-        loginBtns.classList.remove('hidden');
-        loggedinBtns.classList.add('hidden');
+        loginBtns.classList.remove("hidden");
+        loginBtns.classList.add("visible");
+        loggedinBtns.classList.add("hidden");
+        logoutBtn.classList.add("hidden");
+
     }
 }
 
@@ -42,6 +50,7 @@ function authenticate(isSignUp) {
 
         localStorage.setItem(username, password);
         alert("Account created successfully!");
+        window.location.href = "login.html";
         return true;
     }
 
@@ -66,48 +75,75 @@ function logout() {
     window.location.href = "login.html";
 }
 
-
 window.addEventListener("load", () => {
     const navbar = document.getElementById("navbar");
+    const burgerContainer = document.querySelector(".button-container")
     const hamburger = navbar.querySelector(".hamburger");
     const menu = navbar.querySelector(".menu");
-    const navItem = navbar.querySelectorAll(".item_show");
+    const navItem = navbar.querySelectorAll(".nav-item");
     const menuIcon = hamburger.querySelector(".menuIcon");
     const closeIcon = hamburger.querySelector(".closeIcon");
-
-    menu.classList.add("closed");
+     
+    hamburger.classList.add("closed");
+    burgerContainer.classList.add("hide");
     closeIcon.classList.add("hide");
+    menuIcon.classList.add("hide");
 
     function fixNavbar() {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const isScrolled = scrollTop > 0;
         navbar.classList.toggle("scrolled", isScrolled);
         menuIcon.classList.toggle("scrolled", isScrolled);
-        hamburger.classList.toggle("hide", !isScrolled);
-        menu.classList.toggle("hide", isScrolled);
+
+        if (window.innerWidth < 550) {
+            burgerContainer.classList.remove("hide");
+            navbar.classList.toggle("scrolled", isScrolled);
+            menuIcon.classList.toggle("scrolled", isScrolled);
+            hamburger.classList.toggle("hide", !isScrolled);
+            menu.classList.toggle("hide", isScrolled);
+            menuIcon.classList.remove("hide");
+            menu.classList.add("closed");
+            navItem.forEach(item => {
+                item.classList.add("show");
+            });
+            hamburger.classList.remove("hide");
+            hamburger.classList.toggle("fixed", isScrolled);
+        } else {
+            navItem.forEach(item => {
+                item.classList.remove("show");
+            });
+            hamburger.classList.add("hide");
+        }
     }
 
     window.addEventListener("scroll", fixNavbar);
+    window.addEventListener("resize", fixNavbar);
     fixNavbar();
 
     hamburger.addEventListener("click", () => {
+        menu.classList.remove("hide");
+        hamburger.classList.add("open");
+        hamburger.classList.toggle("closed");
+
         if (menu.classList.contains("closed")) {
             menu.classList.remove("closed");
             menu.classList.add("open");
             menuIcon.classList.add("hide");
             closeIcon.classList.remove("hide");
+            navItem.forEach(item => {
+                item.classList.add("show");
+            });
         } else {
             menu.classList.remove("open");
             menu.classList.add("closed");
             closeIcon.classList.add("hide");
             menuIcon.classList.remove("hide");
+            navItem.forEach(item => {
+                item.classList.remove("show");
+            });
         }
-        navItem.forEach(item => {
-            item.classList.toggle("show");
-        });
     });
 });
-
 
 
 //FAQ
