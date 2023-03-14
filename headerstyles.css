@@ -7,6 +7,10 @@ a {
     visibility: hidden;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 /* Default */
 #navbar {
     background-color: black;

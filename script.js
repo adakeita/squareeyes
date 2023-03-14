@@ -83,7 +83,7 @@ window.addEventListener("load", () => {
     const navItem = navbar.querySelectorAll(".nav-item");
     const menuIcon = hamburger.querySelector(".menuIcon");
     const closeIcon = hamburger.querySelector(".closeIcon");
-     
+
     hamburger.classList.add("closed");
     burgerContainer.classList.add("hide");
     closeIcon.classList.add("hide");
@@ -113,6 +113,8 @@ window.addEventListener("load", () => {
                 item.classList.remove("show");
             });
             hamburger.classList.add("hide");
+
+
         }
     }
 
@@ -133,6 +135,7 @@ window.addEventListener("load", () => {
             navItem.forEach(item => {
                 item.classList.add("show");
             });
+            document.body.classList.add("overflow-hidden");
         } else {
             menu.classList.remove("open");
             menu.classList.add("closed");
@@ -141,6 +144,7 @@ window.addEventListener("load", () => {
             navItem.forEach(item => {
                 item.classList.remove("show");
             });
+            document.body.classList.remove("overflow-hidden");
         }
     });
 });
