@@ -124,8 +124,8 @@ window.addEventListener("load", () => {
 
     hamburger.addEventListener("click", () => {
         menu.classList.remove("hide");
-        hamburger.classList.add("open");
-        hamburger.classList.toggle("closed");
+        hamburger.classList.add("closed");
+        hamburger.classList.toggle("open");
 
         if (menu.classList.contains("closed")) {
             menu.classList.remove("closed");

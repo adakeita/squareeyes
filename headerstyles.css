@@ -20,6 +20,7 @@ a {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    transition: 0.2s ease-in-out;
 }
 
 .home {
@@ -73,24 +74,18 @@ a {
 
 /* 
 Hamburger_DEFAULT 
-*/
-/*HIDDEN VIA HIDE*/
 
-/*HAMBURGER hidden via .hide*/
+/*HIDDEN VIA .HIDE
 
-.closeIcon.open {
-    display: block;
-}
+See styles.CSS*/
 
-.showMenu {
-    display: none;
-}
-
-/* New styles for scrolled navbar */
+/*
+ Mediaqueries
+ */
 
 @media only screen and (max-width: 550px) {
     #navbar.scrolled {
-        transition: 0.2s ease-in-out;
+        transition: 0.25s ease-in-out;
     }
 
     .home {
@@ -133,31 +128,8 @@ Hamburger_DEFAULT
         flex-wrap: wrap;
     }
 
-    .menuIcon,
-    .closeIcon {
-        width: 40%;
-        border-radius: 5%;
-    }
-
-    .menuIcon:hover {
-        background-color: var(--se_main);
-        transition: 0.2s ease-in-out;
-    }
-
-    #navbar .hamburger.open {
-        position: absolute;
-        width: 20%;
-    }
-
-    .menuIcon.srcolled,
-    .closeIcon.scrolled {
-        width: 25%;
-        transition: 0.2s ease-in-out;
-    }
-
     #navbar .hamburger {
         display: block;
-        position: static;
         background: none;
         border: none;
         cursor: pointer;
@@ -168,26 +140,23 @@ Hamburger_DEFAULT
         padding: 4px;
         text-align: right;
         margin-right: 5%;
-        
     }
 
-    #navbar .hamburger.scrolled {
-        position: fixed;
-        z-index: 100;
-        top: 1rem;
-        right: 1rem;
-        padding: 4px;
-        border: none;
-        background: none;
-        cursor: pointer;
+    #navbar .hamburger.open,
+    .hamburger.closed {
+        position: absolute;
+        width: 30%;
     }
 
-    #navbar.showMenu .nav-item {
-        display: block;
+    .menuIcon,
+    .closeIcon {
+        width: 30%;
+        border-radius: 5%;
     }
 
-    #navbar.showMenu .hamburger {
-        display: none;
+    .menuIcon:hover {
+        background-color: var(--se_main);
+        transition: 0.2s ease-in-out;
     }
 
     #navbar .menu.open {
@@ -207,57 +176,25 @@ Hamburger_DEFAULT
         display: none;
     }
 
-    #navbar.showMenu .menu {
-        transform: translateY(50px);
-    }
-
     #navbar.showMenu .menu li {
         margin-top: 1rem;
     }
 
-    #navbar.showMenu .closeIcon {
-        display: block;
-        margin-right: 1rem;
-        margin-top: 0.5rem;
-    }
-
     .menu-link {
-        padding: 3% 0%;
+        padding: 0;
     }
 }
 
 @media only screen and (max-width: 450px) {
-    .logoimage {
-        width: 80%;
-        margin-left: 0%;
-    }
-
-    .logoimage.small {
-        width: 50%;
-    }
-
-    .button-container {
-        margin: 5% 0 5% 5%;
-    }
-
-    .menuIcon,
-    .closeIcon {
-        width: 80%;
-        border-radius: 5%;
-    }
-
-    .menuIcon.scrolled {
-        width: 20px;
-        margin-top: -3%;
-        transition: 0.2s ease-in-out;
-    }
-
-    .menuIcon.scrolled {
-        margin-top: -5%;
-    }
-
     #navbar.scrolled .logoimage {
-        margin: 2% 0% 0% -30%;
         width: 60%;
+    }
+
+    #navbar.scrolled .hamburger.fixed {
+        margin-right: 10%;
+    }
+
+    .menuIcon.scrolled {
+        transition: 0.2s ease-in-out;
     }
 }
