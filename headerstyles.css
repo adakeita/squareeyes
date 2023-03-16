@@ -63,7 +63,7 @@ a {
 
 /* SCROLLED_DEFAULT*/
 #navbar.scrolled .logoimage {
-    width: 45%;
+    width: 35%;
 }
 
 #navbar.scrolled {
@@ -113,7 +113,6 @@ See styles.CSS*/
     }
 
     .nav-item.show {
-        display: block;
         text-align: center;
         font-size: 100%;
         padding: 5px;

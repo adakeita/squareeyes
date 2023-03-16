@@ -47,6 +47,11 @@ body {
   visibility: hidden;
 }
 
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
 /*
 INDEX_PAGE
 */
@@ -67,7 +72,8 @@ INDEX_PAGE
 .index-image-text {
   font-size: 20px;
   text-align: center;
-  margin: 0;
+  margin: 0px 0px 25px 0px;;
+  
 }
 
 .main_img {
@@ -79,6 +85,10 @@ INDEX_PAGE
   position: absolute;
   display: flex;
   flex-wrap: wrap;
+}
+
+.index-options.hidden {
+  display: none;
 }
 
 .index-btn {
@@ -244,6 +254,7 @@ INDEX_PAGE
 }
 
 .faq-question .faq-toggle {
+  border: none;
   background-color: black;
   font-size: 20px;
   font-weight: bold;
@@ -590,7 +601,7 @@ MEDIAQUERIES
   }
 
   .content-container {
-    margin: 10% 10%;
+    margin: 0% 5%;
   }
 
   /*Index_Page*/
@@ -615,20 +626,12 @@ MEDIAQUERIES
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-  }
-
-  .index-image-buffer {
-    flex: 1;
-  }
-
-  .index-options {
     position: relative;
     margin-top: 5%;
   }
 
-  .index-btn {
-    flex: 0.5;
-    text-align: center;
+  .index-image-buffer {
+    flex: 1;
   }
 
   .buffer-div {
@@ -691,6 +694,18 @@ MEDIAQUERIES
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
+  }
+
+  /*
+ BROWSE_INDEX
+ */
+
+  .index_movie_header {
+    font-size: 95%;
+  }
+
+  .movie {
+    font-size: 70%;
   }
   /*
 ABOUTMOV_PAGE

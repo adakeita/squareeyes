@@ -2,6 +2,8 @@ const loginBtn = document.getElementById("login-btn");
 const logoutBtn = document.getElementById("logout-btn");
 const loginBtns = document.getElementById("login-btns-container");
 const loggedinBtns = document.getElementById("loggedin-btns-container");
+const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
+const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
 
 let userIsLoggedIn = false;
 if (localStorage.getItem("currentUser")) {
@@ -10,21 +12,21 @@ if (localStorage.getItem("currentUser")) {
 
 if (loginBtns && loggedinBtns) {
     if (userIsLoggedIn) {
-        loginBtn.classList.add("hidden")
+        loginBtn.classList.add("hidden");
         loginBtns.classList.add("hidden");
         loggedinBtns.classList.remove("hidden");
         logoutBtn.classList.remove("hidden");
-        loggedinBtns.classList.add("visible");
-        logoutBtn.classList.add("visible");
-
+        btnsIsLoggedOut.forEach(btn => btn.classList.add("hidden"));
+        btnsIsLoggedIn.forEach(btn => btn.classList.remove("hidden"));
     } else {
         loginBtns.classList.remove("hidden");
-        loginBtns.classList.add("visible");
         loggedinBtns.classList.add("hidden");
         logoutBtn.classList.add("hidden");
-
+        btnsIsLoggedOut.forEach(btn => btn.classList.remove("hidden"));
+        btnsIsLoggedIn.forEach(btn => btn.classList.add("hidden"));
     }
 }
+
 
 function authenticate(isSignUp) {
     const username = document.getElementById("username").value;

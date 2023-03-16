@@ -16,22 +16,22 @@
 <body>
     <header>
         <nav id="navbar">
-            <a class="home" href="#default">
+            <a class="home" href="index.html">
                 <div class="logo_image_container">
                     <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="blue logo SquareEyes">
                 </div>
             </a>
             <ul class="navbar_links static menu default">
-                <li class="nav-item item_show"><a class="menu-link" href="about.html">ABOUT</a></li>
-                <li id="logout-btn" class="nav-item item_show"><a class="menu-link" href="#"
+                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#"
                         onClick="logout()">LOGOUT</a></li>
-                <li id="login-btn" class="nav-item item_show"><a class="menu-link" href="login.html">LOGIN</a></li>
-                <li id="logout-btn" class="nav-item item_show"><a class="menu-link" href="browseindex.html">BROWSE</a>
+                <li class="nav-item logged-in"><a class="menu-link" href="browseindex.html">BROWSE</a>
                 </li>
-                <li id="logout-btn" class="nav-item item_show"><a class="menu-link" href="mymovies.html">MY MOVIES</a>
+                <li class="nav-item logged-in"><a class="menu-link" href="mymovies.html">MY MOVIES</a>
                 </li>
-                <li id="login-btn" class="nav-item item_show"><a class="menu-link" href="signup.html">SIGNUP</a></li>
-                <li class="nav-item item_show"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
+                <li class="nav-item logged-out"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item logged-out"><a class="menu-link" href="signup.html">SIGNUP</a></li>
+                <li class="nav-item"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
             </ul>
             <div class="button-container hide">
                 <button class="hamburger">
