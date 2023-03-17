@@ -10,21 +10,19 @@ if (localStorage.getItem("currentUser")) {
     userIsLoggedIn = true;
 }
 
-if (loginBtns && loggedinBtns) {
-    if (userIsLoggedIn) {
-        loginBtn.classList.add("hidden");
-        loginBtns.classList.add("hidden");
-        loggedinBtns.classList.remove("hidden");
-        logoutBtn.classList.remove("hidden");
-        btnsIsLoggedOut.forEach(btn => btn.classList.add("hidden"));
-        btnsIsLoggedIn.forEach(btn => btn.classList.remove("hidden"));
-    } else {
-        loginBtns.classList.remove("hidden");
-        loggedinBtns.classList.add("hidden");
-        logoutBtn.classList.add("hidden");
-        btnsIsLoggedOut.forEach(btn => btn.classList.remove("hidden"));
-        btnsIsLoggedIn.forEach(btn => btn.classList.add("hidden"));
-    }
+if (userIsLoggedIn) {
+    loginBtn?.classList.add("hidden");
+    loginBtns?.classList.add("hidden");
+    loggedinBtns?.classList.remove("hidden");
+    logoutBtn.classList.remove("hidden");
+    btnsIsLoggedOut.forEach(btn => btn.classList.add("hidden"));
+    btnsIsLoggedIn.forEach(btn => btn.classList.remove("hidden"));
+} else {
+    loginBtns?.classList.remove("hidden");
+    loggedinBtns?.classList.add("hidden");
+    logoutBtn?.classList.add("hidden");
+    btnsIsLoggedOut.forEach(btn => btn.classList.remove("hidden"));
+    btnsIsLoggedIn.forEach(btn => btn.classList.add("hidden"));
 }
 
 
@@ -91,7 +89,7 @@ window.addEventListener("load", () => {
     closeIcon.classList.add("hide");
     menuIcon.classList.add("hide");
 
-    
+
 
     function fixNavbar() {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
