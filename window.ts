@@ -1,34 +1,38 @@
-const loginBtn = document.getElementById("login-btn");
-const logoutBtn = document.getElementById("logout-btn");
-const loginBtns = document.getElementById("login-btns-container");
-const loggedinBtns = document.getElementById("loggedin-btns-container");
-const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
-const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
-
-let userIsLoggedIn = false;
-if (localStorage.getItem("currentUser")) {
-    userIsLoggedIn = true;
+window.onload = function () {
+    handleAuthentication();
+    handleNavbar();
+    handleFAQ();
 }
 
-if (loginBtns && loggedinBtns) {
-    if (userIsLoggedIn) {
-        loginBtn.classList.add("hidden");
-        loginBtns.classList.add("hidden");
-        loggedinBtns.classList.remove("hidden");
-        logoutBtn.classList.remove("hidden");
-        btnsIsLoggedOut.forEach(btn => btn.classList.add("hidden"));
-        btnsIsLoggedIn.forEach(btn => btn.classList.remove("hidden"));
-    } else {
-        loginBtns.classList.remove("hidden");
-        loggedinBtns.classList.add("hidden");
-        logoutBtn.classList.add("hidden");
-        btnsIsLoggedOut.forEach(btn => btn.classList.remove("hidden"));
-        btnsIsLoggedIn.forEach(btn => btn.classList.add("hidden"));
+function handleAuthentication() {
+    const loginBtn = document.getElementById("login-btn");
+    const logoutBtn = document.getElementById("logout-btn");
+    const loginBtns = document.getElementById("login-btns-container");
+    const loggedinBtns = document.getElementById("loggedin-btns-container");
+    const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
+    const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
+
+    let userIsLoggedIn = false;
+    if (localStorage.getItem("currentUser")) {
+        userIsLoggedIn = true;
     }
-}
 
-
-function authenticate(isSignUp) {
+    if (loginBtns && loggedinBtns) {
+        if (userIsLoggedIn) {
+            loginBtn.classList.add("hidden");
+            loginBtns.classList.add("hidden");
+            loggedinBtns.classList.remove("hidden");
+            logoutBtn.classList.remove("hidden");
+            btnsIsLoggedOut.forEach(btn => btn.classList.add("hidden"));
+            btnsIsLoggedIn.forEach(btn => btn.classList.remove("hidden"));
+        } else {
+            loginBtns.classList.remove("hidden");
+            loggedinBtns.classList.add("hidden");
+            logoutBtn.classList.add("hidden");
+            btnsIsLoggedOut.forEach(btn => btn.classList.remove("hidden"));
+            btnsIsLoggedIn.forEach(btn => btn.classList.add("hidden"));
+        }
+    }
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     let confirmPassword = "";
@@ -76,8 +80,7 @@ function logout() {
     localStorage.removeItem("currentUser");
     window.location.href = "login.html";
 }
-
-window.addEventListener("load", () => {
+function handleNavbar() {
     const navbar = document.getElementById("navbar");
     const burgerContainer = document.querySelector(".button-container")
     const hamburger = navbar.querySelector(".hamburger");
@@ -149,30 +152,26 @@ window.addEventListener("load", () => {
             document.body.classList.remove("overflow-hidden");
         }
     });
-});
+}
 
+function handleFAQ() {
+    const faq = document.querySelectorAll(".faq-question");
 
-//FAQ
-const faq = document.querySelectorAll(".faq-question");
+    faq.forEach((item) => {
+        const toggle = item.querySelector(".faq-toggle");
 
-faq.forEach((item) => {
-    const toggle = item.querySelector(".faq-toggle");
+        item.addEventListener("click", () => {
+            // Toggle between adding and removing the "active" class,
+            // to highlight the button that controls the panel
+            item.classList.toggle("active");
 
-    item.addEventListener("click", () => {
-        // Toggle between adding and removing the "active" class,
-        // to highlight the button that controls the panel
-        item.classList.toggle("active");
+            // Toggle between hiding and showing the active panel
+            const answer = item.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
 
-        // Toggle between hiding and showing the active panel
-        const answer = item.nextElementSibling;
-        answer.style.display = answer.style.display === "block" ? "none" : "block";
-
-        // Toggle the plus/minus sign
-        toggle.textContent = toggle.textContent === "+" ? "-" : "+";
+            // Toggle the plus/minus sign
+            toggle.textContent = toggle.textContent === "+" ? "-" : "+";
+        });
     });
-});
 
-
-
-
-
+}
