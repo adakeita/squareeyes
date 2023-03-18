@@ -475,12 +475,25 @@ PROFILE
   flex: 2;
 }
 
+.view-cart-btn {
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.view-cart-btn:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+  border: 1px solid var(--se_main);
+}
+
 .view-cart-container {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  margin-right: 15px;
 }
 
 .cart-image-wrapper {
