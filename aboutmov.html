@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="headerstyles.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="footerstyles.css">
     <script src="script.js" async defer></script>
+    <script src="cart.js" async defer></script>
     <title>Our Community</title>
 </head>
 
@@ -49,6 +51,11 @@
             </div>
         </div>
         <div class="info-container">
+            <div id="4" class="movie-item selected hidden">
+                <img src="./movies/scream.jpeg" alt="scream-poster">
+                <h3>Scream</h3>
+                <p class="price">9.99</p>
+              </div>
             <div class="i-container-row">
                 <div class="buy_movie">
                     <div class="buy_item">
@@ -61,8 +68,8 @@
                         </a>
                     </div>
                     <div class="buy_item">
-                        <a class="purchase_link" href="cart.html">
-                            <div class="rating_btn cart_btn">
+                        <a class="purchase_link" href="#">
+                            <div class="rating_btn cart_btn cart-btn">
                                 <div class="cart_image_wrapper">
                                     <img class="cart_btn_img" src="./iconsbuttons/add-to-cart.png"
                                         alt="button to cart site">
@@ -93,7 +100,7 @@
                     <div class="movie_headline">
                         <h3 class="trailer_header_text">Scream</h3>
 
-                        <p>
+                        <p class="movie-description">
                             25 years after a streak of brutal murders shocked the quiet town of Woodsboro, California, a
                             new
                             killer
@@ -104,31 +111,42 @@
                     </div>
                 </div>
             </div>
+            <div class="cart-container hidden">
+                <div class="exit-container hidden">
+                    <button class="exit">
+                        <img src="iconsbuttons/cross.png" class="close-cart" alt="icon for close checkout ">
+                    </button>
+                </div>
+                <!-- items will be added here -->
+                <div class="items-container"></div>
+                <div class="checkout-container">
+                    <button class="checkout-btn">Checkout</button>
+                </div>
+            </div>
+
     </main>
     <footer id="footer">
         <div class="footer-content">
-            <div class="footer-row footer-piece">
-                <div class="direct-contact footer-element">
-                    <a class="footer-links" href="https://www.whatsapp.com/">
-                        <img class="contact-icon" src="./iconsbuttons/telephone.png" alt="call">
-                        <p class="connect-p footer-p">Call Us</p>
-                    </a>
-                </div>
-                <div class="connect-socials footer-element">
-                    <a class="footer-links" href="https://mail.google.com/">
-                        <img class="contact-icon" src="./iconsbuttons/email.png" alt="email us">
-                        <p class="connect-p footer-p">Email Us</p>
-                    </a>
-                </div>
+            <div class="connect-socials footer-element">
+                <a class="footer-links" href="https://www.whatsapp.com/">
+                    <img class="contact-icon" src="./iconsbuttons/telephone.png" alt="call">
+                    <p class="connect-p footer-p">Call Us</p>
+                </a>
             </div>
-            <div class="footer-attribution footer-piece">
-                <div class="footer-attribution-row">
-                    <p class="attr-text vector-unsplash">This website uses images from <a
-                            href="https://unsplash.com/">Unsplash</a> and vector icons from <a
-                            href="https://www.flaticon.com/">Flaticon</a>.</p>
-                    <p class="noroff attr-text">This is a school project for Noroff School of Technology's Frontend
-                        class.</p>
-                </div>
+            
+            <div class="footer-attribution">
+                <p class="attr-text vector-unsplash">This website uses images from <a
+                        href="https://unsplash.com/">Unsplash</a> and vector icons from <a
+                        href="https://www.flaticon.com/">Flaticon</a>.</p>
+                <p class="noroff attr-text">This is a school project for Noroff School of Technology's Frontend
+                    class.</p>
+            </div>
+
+            <div class="connect-socials footer-element">
+                <a class="footer-links" href="https://mail.google.com/">
+                    <img class="contact-icon" src="./iconsbuttons/email.png" alt="email us">
+                    <p class="connect-p footer-p">Email Us</p>
+                </a>
             </div>
         </div>
     </footer>

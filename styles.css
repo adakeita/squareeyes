@@ -298,7 +298,7 @@ ABOUT
 .team_image_container {
   text-align: center;
   margin: auto;
-  padding: 5% 0% 5% 0%;
+  padding: 5% 0% 0% 0%;
 }
 
 .team_image {
@@ -482,7 +482,6 @@ BROWSEINDEX_PAGE
 
 .cart_btn_img:hover {
   transform: scale(1.1);
-  background-color: var(--se_main);
   transition: 0.25s ease-in-out;
   border-radius: 15%;
 }
@@ -510,7 +509,7 @@ BROWSEINDEX_PAGE
 }
 
 .rating_image_wrapper {
-  width: 100%;
+  width: 80%;
 }
 
 .rating_image_wrapper:hover {
@@ -529,11 +528,24 @@ BROWSEINDEX_PAGE
 }
 
 .cart_image_wrapper {
-  width: 100%;
+  width: 80%;
+}
+
+.cart_image_wrapper:hover {
+  background-color: var(--se_main);
+  border-radius: 5%;
 }
 
 .cart_btn_image_wrapper {
   width: 30%;
+}
+
+.trailer_header_text {
+  margin: 2% 15%;
+}
+
+.movie-description{
+  margin: 0% 20%;
 }
 
 /*purchase*/
