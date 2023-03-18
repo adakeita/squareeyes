@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="headerstyles.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="footerstyles.css">
+    <link rel="stylesheet" href="cart.css">
     <script src="script.js" async defer></script>
+    <script src="cart.js" async defer></script>
     <title>PROFILE</title>
 </head>
 
@@ -37,13 +39,45 @@
         </nav>
     </header>
     <main class="page-container">
-        <div class="profile-card">
-            <div class="profile-img-container">
-                <img class="profile_avatar" src="./images/profile.png" alt="profile avatar">
+        <div class="profile-header">
+            <h1 class="profile-h1 header-element">MY PROFILE</h1>
+            <div class="view-cart-container">
+                <button>
+                    <div class="cart-image-wrapper">
+                        <img class="cart-image" src="./iconsbuttons/viewcart.png" alt="">
+                    </div>
+                </button>
             </div>
         </div>
-        <div id="myMovies" class="my-movies">
+        <div class="profile-card">
+            <div class="profile-img-container profile-element">
+                <img class="profile_avatar" src="./images/profile.png" alt="profile avatar">
+            </div>
+            <div class="profile-element personalia">
+                <p class="personalia-text">Name: </p>
+                <p class="personalia-text">Age: </p>
+                <p class="personalia-text">Favorite Genre:</p>
+            </div>
+        </div>
+        <div class="my-movie-wrapper">
+            <div class="my-movies-header">
+                <h4>My Movies</h4>
+            </div>
+            <div id="myMovies" class="my-movies profile-page">
 
+            </div>
+        </div>
+        <div class="cart-container hidden">
+            <div class="exit-container hidden">
+                <button class="exit">
+                    <img src="iconsbuttons/cross.png" class="close-cart" alt="icon for close checkout ">
+                </button>
+            </div>
+            <!-- items will be added here -->
+            <div class="items-container"></div>
+            <div class="checkout-container">
+                <button class="checkout-btn">Checkout</button>
+            </div>
         </div>
     </main>
     <footer id="footer">
@@ -54,7 +88,7 @@
                     <p class="connect-p footer-p">Call Us</p>
                 </a>
             </div>
-            
+
             <div class="footer-attribution">
                 <p class="attr-text vector-unsplash">This website uses images from <a
                         href="https://unsplash.com/">Unsplash</a> and vector icons from <a

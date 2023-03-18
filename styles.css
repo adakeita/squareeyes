@@ -72,8 +72,7 @@ INDEX_PAGE
 .index-image-text {
   font-size: 20px;
   text-align: center;
-  margin: 0px 0px 25px 0px;;
-  
+  margin: 0px 0px 25px 0px;
 }
 
 .main_img {
@@ -461,6 +460,57 @@ BROWSEINDEX_PAGE
   font-size: 13px;
 }
 
+/*
+PROFILE
+*/
+
+.profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-element {
+  flex: 2;
+}
+
+.view-cart-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-image-wrapper {
+   width: 100px;
+}
+
+.cart-image {
+  width: 100%;
+}
+
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.profile-img-container {
+  padding: 0% 5%;
+}
+
+.personalia {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1;
+  align-content: flex-start;
+}
+
 /*ABOUTMOVVIE*/
 
 .i-container-row {
@@ -544,7 +594,7 @@ BROWSEINDEX_PAGE
   margin: 2% 15%;
 }
 
-.movie-description{
+.movie-description {
   margin: 0% 20%;
 }
 

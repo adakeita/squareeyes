@@ -172,6 +172,27 @@ faq.forEach((item) => {
     });
 });
 
+let purchasedMovies = [];
+
+function displayPurchasedMovies() {
+    const purchasedMoviesContainer = document.querySelector('.purchased-movies-container');
+    purchasedMovies.forEach(movie => {
+        const movieItem = document.createElement('div');
+        movieItem.classList.add('movie-item');
+        movieItem.innerHTML = `
+            <img src="${movie.imageUrl}" alt="${movie.title} image">
+            <h4>${movie.title}</h4>
+            <p>${movie.price}</p>
+        `;
+        purchasedMoviesContainer.appendChild(movieItem);
+    });
+}
+
+if (document.querySelector('.profile-page')) {
+    displayPurchasedMovies();
+}
+
+
 
 
 
