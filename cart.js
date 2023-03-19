@@ -4,6 +4,7 @@ const checkoutBtn = document.querySelector(".checkout-btn");
 const cartContainer = document.querySelector(".cart-container");
 const exitContainer = document.querySelector(".exit-container");
 const itemsContainer = document.querySelector(".items-container");
+const buyNowBtn = document.querySelectorAll('.cart_image_wrapper');
 
 if (viewCartBtn) {
     viewCartBtn.addEventListener("click", () => {
@@ -155,24 +156,25 @@ checkoutBtn.addEventListener('click', () => {
 function showPurchasedMovies() {
     const myMoviesContainer = document.querySelector('#myMovies');
     if (myMoviesContainer) {
-        const purchasedMovies = JSON.parse(localStorage.getItem('purchasedMovies'));
-        if (purchasedMovies && purchasedMovies.length > 0) {
-            purchasedMovies.forEach(movie => {
-                const purchasedMovie = document.createElement('div');
-                purchasedMovie.classList.add('purchased-movie');
-                purchasedMovie.innerHTML = `
-            <h3 id="purchased-movie-title">${movie.title}</h3>
-            <img id="purchased-movie-image" src="${movie.imageUrl}" alt="${movie.title} image">
-            <p id="purchased-movie-price">${movie.price}</p>
+      const purchasedMovies = JSON.parse(localStorage.getItem('purchasedMovies'));
+      if (purchasedMovies && purchasedMovies.length > 0) {
+        purchasedMovies.forEach(movie => {
+          const purchasedMovie = document.createElement('div');
+          purchasedMovie.classList.add('purchased-movie');
+          purchasedMovie.innerHTML = `
+            <h3 class="purchased-movie-title purchased-element">${movie.title}</h3>
+            <div class="purchased-movie-image-wrapper purchased-element">
+              <img class="purchased-movie-image" src="${movie.imageUrl}" alt="${movie.title} image">
+            </div>
+            <p class="purchased-movie-price purchased-element">Price: ${movie.price}$</p>
           `;
-                myMoviesContainer.appendChild(purchasedMovie);
-            });
-        } else {
-            const noMoviesMessage = document.createElement('p');
-            noMoviesMessage.innerHTML = 'You haven\'t purchased any films yet.';
-            myMoviesContainer.appendChild(noMoviesMessage);
-        }
+          myMoviesContainer.appendChild(purchasedMovie);
+        });
+      } else {
+        const noMoviesMessage = document.createElement('p');
+        noMoviesMessage.innerHTML = 'You haven\'t purchased any films yet.';
+        myMoviesContainer.appendChild(noMoviesMessage);
+      }
     }
-}
-
+  }
 showPurchasedMovies();

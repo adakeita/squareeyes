@@ -524,6 +524,29 @@ PROFILE
   align-content: flex-start;
 }
 
+#myMovies {
+  margin: 2% 0%;
+}
+
+.purchased-movie {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.purchased-element {
+  flex: 1;
+}
+
+.purchased-movie-image-wrapper {
+  width: 135px;
+}
+
+.purchased-movie-image {
+  width: 100%;
+}
 /*ABOUTMOVVIE*/
 
 .i-container-row {
