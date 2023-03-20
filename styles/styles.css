@@ -589,7 +589,7 @@ PROFILE
   width: 100%;
   border: 1px solid var(--text);
 }
-/*ABOUTMOVVIE*/
+/*ABOUTMOVIE*/
 
 .info-row-btn-container {
   display: flex;
@@ -640,6 +640,36 @@ PROFILE
 .info-btn-image {
   width: 100%;
   border-radius: 5%;
+}
+
+.info-overview-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.header-price-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.overview-header {
+  flex: 1;
+}
+
+.movie-info-price {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.movie-overview {
+  margin: 0% 5%;
 }
 
 /*purchase*/
@@ -814,13 +844,13 @@ MEDIAQUERIES
     font-size: 70%;
   }
   /*
-ABOUTMOV_PAGE
+ABOUTMOVIE_PAGE
 */
 
-.info-btn-image-wrapper {
-  width: 65px;
-  height: 35px;
-}
+  .info-btn-image-wrapper {
+    width: 65px;
+    height: 35px;
+  }
 
   /*
   LOGIN_PAGE

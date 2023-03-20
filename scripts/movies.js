@@ -1,7 +1,5 @@
 const apiKey = "4f8ed672bca5d88dde2fcbb70a60657c";
-
-const baseUrl = 'https://api.themoviedb.org/3';
-
+const baseUrl = "https://api.themoviedb.org/3";
 const movieIds = [
     481084,
     646385,
@@ -12,56 +10,57 @@ const movieIds = [
     466272,
     373571
 ];
+const [newMoviesContainer, yourMoviesContainer] = document.querySelectorAll(".browse_index_row");
 
-// Select the container elements in your HTML
-const newMoviesContainer = document.querySelector(".new_movies_container .movie-container");
-const yourMoviesContainer = document.querySelector(".your_movies_container .movie-container");
+function createMovieCard(movie) {
+    const movieCardHtml = `
+        <div class="movie-card">
+            <h2 class="movie-title">${movie.title}</h2>
+            <div class="movie-poster-wrapper">
+                <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster" data-id="${movie.id}">
+            </div>
+            <p class="movie-price">$${Math.floor(Math.random() * 10 + 1)}.99</p>
+        </div>
+    `;
+    const movieCard = document.createElement("div");
+    movieCard.innerHTML = movieCardHtml.trim();
+    return movieCard;
+}
 
-movieIds.forEach((movieId, index) => {
+async function fetchMovieData(movieId) {
     const movieUrl = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=en-US`;
 
-    fetch(movieUrl)
-        .then((response) => response.json())
-        .then((movie) => {
-            const movieCard = document.createElement("div");
-            movieCard.classList.add("movie-card");
+    try {
+        const response = await fetch(movieUrl);
+        const movie = await response.json();
+        return movie;
+    } catch (error) {
+        console.error("Error fetching movie data:", error);
+        return null;
+    }
+}
 
-            const movieTitle = document.createElement("h2");
-            movieTitle.classList.add("movie-title");
-            movieTitle.textContent = movie.title;
+movieIds.forEach(async (movieId, index) => {
+    const movie = await fetchMovieData(movieId);
 
-            const moviePrice = document.createElement("p");
-            moviePrice.classList.add("movie-price");
-            moviePrice.textContent = "$" + Math.floor(Math.random() * 10 + 1) + ".99";
+    if (!movie) {
+        return;
+    }
 
-            const moviePosterWrapper = document.createElement("div");
-            moviePosterWrapper.classList.add("movie-poster-wrapper");
+    const movieCard = createMovieCard(movie);
 
-            const moviePoster = document.createElement("img");
-            moviePoster.classList.add("movie-poster");
-            moviePoster.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-            moviePoster.alt = `${movie.title} poster`;
-            moviePoster.dataset.id = movie.id;
+    if (newMoviesContainer && yourMoviesContainer) {
+        if (index < 4) {
+            newMoviesContainer.appendChild(movieCard);
+        } else {
+            yourMoviesContainer.appendChild(movieCard);
+        }
 
-            if (newMoviesContainer || yourMoviesContainer) {
-                if (index < 4) {
-                    newMoviesContainer.appendChild(movieCard);
-                } else {
-                    yourMoviesContainer.appendChild(movieCard);
-                }
-                movieCard.appendChild(movieTitle);
-                movieCard.appendChild(moviePosterWrapper);
-                moviePosterWrapper.appendChild(moviePoster);
-                movieCard.appendChild(moviePrice);
-
-                moviePoster.addEventListener("click", () => {
-                    window.location.href = `aboutmovie.html?id=${movie.id}`;
-                });
-            }
-        })
-        .catch((error) => {
-            console.error("Error fetching movie data:", error);
+        const moviePoster = movieCard.querySelector(".movie-poster");
+        moviePoster.addEventListener("click", () => {
+            window.location.href = `aboutmovie.html?id=${movie.id}`;
         });
+    }
 });
 
 window.addEventListener("load", () => {
@@ -73,35 +72,44 @@ window.addEventListener("load", () => {
         const movieDetailsUrl = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=en-US`;
 
         fetch(movieDetailsUrl)
-            .then((response) => response.json())
-            .then((movieDetails) => {
+            .then(response => response.json())
+            .then(movieDetails => {
                 const movieTitle = document.createElement("h2");
                 movieTitle.classList.add("movie-info-title");
                 movieTitle.textContent = movieDetails.title;
 
+                const overviewWrapper = document.querySelector(".info-overview-wrapper");
+
+                const headerPriceWrapper = document.createElement("div");
+                headerPriceWrapper.classList.add("header-price-wrapper");
+                overviewWrapper.appendChild(headerPriceWrapper);
+
+                const overviewHeader = document.createElement("div");
+                overviewHeader.classList.add("overview-header");
+                headerPriceWrapper.appendChild(overviewHeader);
+
+                const oH3 = document.createElement("h3");
+                oH3.classList.add("o-h3");
+                oH3.textContent = "Movie Overview";
+                overviewHeader.appendChild(oH3);
+
                 const moviePrice = document.createElement("p");
                 moviePrice.classList.add("movie-info-price");
-                moviePrice.textContent =
-                    "$" + Math.floor(Math.random() * 10 + 1) + ".99";
-
-                const overviewWrapper = document.querySelector(".info-overview-wrapper");
+                moviePrice.textContent = "Price $" + Math.floor(Math.random() * 10 + 1) + ".99";
+                headerPriceWrapper.appendChild(moviePrice);
                 const movieOverview = document.createElement("p");
                 movieOverview.classList.add("movie-overview");
                 movieOverview.textContent = movieDetails.overview;
                 overviewWrapper.appendChild(movieOverview);
 
-                // Check if there is a video available
                 const movieVideosUrl = `${baseUrl}/movie/${movieId}/videos?api_key=${apiKey}`;
                 fetch(movieVideosUrl)
-                    .then((response) => response.json())
-                    .then((videoData) => {
+                    .then(response => response.json())
+                    .then(videoData => {
                         const videoResults = videoData.results;
-                        const clip = videoResults.find(
-                            (result) => result.type === "Trailer" && result.site === "YouTube"
-                        );
+                        const clip = videoResults.find(result => result.type === "Trailer" && result.site === "YouTube");
 
-                        let videoWrapper;
-                        let video;
+                        let videoWrapper, video, moviePosterWrapper, moviePoster;
 
                         if (clip) {
                             videoWrapper = document.createElement("div");
@@ -117,10 +125,10 @@ window.addEventListener("load", () => {
 
                             videoWrapper.appendChild(video);
                         } else {
-                            const moviePosterWrapper = document.createElement("div");
+                            moviePosterWrapper = document.createElement("div");
                             moviePosterWrapper.classList.add("image-wrapper");
 
-                            const moviePoster = document.createElement("img");
+                            moviePoster = document.createElement("img");
                             moviePoster.classList.add("movie-info-poster");
                             moviePoster.src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
                             moviePoster.alt = `${movieDetails.title} poster`;
@@ -128,21 +136,18 @@ window.addEventListener("load", () => {
                         }
 
                         movieDetailsContainer.appendChild(movieTitle);
-                        movieDetailsContainer.appendChild(moviePrice);
-                        if (videoWrapper && video) {
+
+                        if (clip) {
                             movieDetailsContainer.appendChild(videoWrapper);
-                             videoWrapper.appendChild(video);
+                            videoWrapper.appendChild(video);
+                        } else {
+                            movieDetailsContainer.appendChild(moviePosterWrapper);
+                            moviePosterWrapper.appendChild(moviePoster);
                         }
+
                     })
-                    .catch((error) => {
-                        console.error("Error fetching movie videos data:", error);
-                    });
-            });
+                    .catch(error => console.error("Error fetching movie videos data:", error));
+            })
+            .catch(error => console.error("Error fetching movie data:", error));
     }
-
-
-
-
-
-
 });
