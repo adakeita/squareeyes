@@ -405,7 +405,8 @@ input[type="button"]:hover {
 BROWSEINDEX_PAGE
 */
 
-.movie_clip {
+.movie_clip,
+.video-wrapper {
   width: 100%;
   height: 455px;
 }
@@ -590,89 +591,55 @@ PROFILE
 }
 /*ABOUTMOVVIE*/
 
-.i-container-row {
+.info-row-btn-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  margin-top: 5%;
+  margin: 5% 0%;
 }
 
-.rating_btn {
-  max-width: 150px;
-  padding: 0% 10%;
-}
-
-.cart_btn_img {
-  width: 100%;
-}
-
-.cart_btn_img:hover {
-  transform: scale(1.1);
-  transition: 0.25s ease-in-out;
-  border-radius: 15%;
-}
-
-.rating {
+.buy-movie,
+.rate-movie {
+  flex: 1;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  flex-direction: row;
-  flex: 2;
+}
+
+.buy-movie {
+  justify-content: flex-start;
+}
+
+.rate-movie {
   justify-content: flex-end;
 }
 
-.buy_movie {
+.info-row-btns {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
   flex-direction: row;
-  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 1px;
 }
 
-.buy_item {
-  flex: 1;
+.info-btn-image-wrapper {
+  width: 100px;
+  height: 50px;
+  padding: 5px 5px;
+  border-radius: 10%;
 }
 
-.rating_image_wrapper {
-  width: 80%;
-}
-
-.rating_image_wrapper:hover {
-  background-color: var(--se_main);
-  border-radius: 5%;
-}
-
-.rating_btn_img {
-  width: 100%;
-  border-radius: 5%;
-}
-
-.rating_btn_img:hover {
+.info-btn-image-wrapper:hover {
   transform: scale(1.1);
+  background-color: var(--se_main);
   transition: 0.25s ease-in-out;
 }
 
-.cart_image_wrapper {
-  width: 80%;
-}
-
-.cart_image_wrapper:hover {
-  background-color: var(--se_main);
+.info-btn-image {
+  width: 100%;
   border-radius: 5%;
-}
-
-.cart_btn_image_wrapper {
-  width: 30%;
-}
-
-.trailer_header_text {
-  margin: 2% 15%;
-}
-
-.movie-description {
-  margin: 0% 20%;
 }
 
 /*purchase*/
@@ -849,9 +816,11 @@ MEDIAQUERIES
   /*
 ABOUTMOV_PAGE
 */
-  .i-container-row {
-    align-items: stretch;
-  }
+
+.info-btn-image-wrapper {
+  width: 65px;
+  height: 35px;
+}
 
   /*
   LOGIN_PAGE

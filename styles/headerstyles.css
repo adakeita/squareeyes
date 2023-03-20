@@ -84,10 +84,6 @@ See styles.CSS*/
  */
 
 @media only screen and (max-width: 550px) {
-    #navbar.scrolled {
-        transition: 0.25s ease-in-out;
-    }
-
     .home {
         flex: 1;
         text-decoration: none;
@@ -99,7 +95,15 @@ See styles.CSS*/
     }
 
     .logoimage {
-        width: 80%;
+        width: 85%;
+    }
+
+    #navbar.scrolled {
+        height: 70px;
+    }
+
+    #navbar.scrolled .logo_image_container {
+        margin: 1% 0%;
     }
 
     #navbar.scrolled .logoimage {
@@ -132,25 +136,28 @@ See styles.CSS*/
         background: none;
         border: none;
         cursor: pointer;
+        margin-right: 7%;
+        padding: 0;
     }
 
     #navbar.scrolled .hamburger.fixed {
         z-index: 100;
-        padding: 4px;
         text-align: right;
-        margin-right: 5%;
     }
 
     #navbar .hamburger.open,
     .hamburger.closed {
         position: absolute;
-        width: 30%;
     }
 
     .menuIcon,
     .closeIcon {
-        width: 30%;
+        width: 35px;
         border-radius: 5%;
+    }
+
+    .menuIcon.scrolled {
+        width: 30px;
     }
 
     .menuIcon:hover {
@@ -185,15 +192,30 @@ See styles.CSS*/
 }
 
 @media only screen and (max-width: 450px) {
+    #navbar.scrolled {
+        height: 55px;
+    }
+
+    .logoimage {
+        width: 95%;
+    }
+
     #navbar.scrolled .logoimage {
         width: 60%;
     }
 
-    #navbar.scrolled .hamburger.fixed {
-        margin-right: 10%;
+    .menuIcon,
+    .closeIcon {
+        width: 30px;
+        border-radius: 5%;
+        transition: 0.2s ease-in-out;
     }
 
     .menuIcon.scrolled {
-        transition: 0.2s ease-in-out;
+        width: 25px;
+    }
+
+    #navbar .menu.open {
+        align-items: center;
     }
 }
