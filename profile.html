@@ -2,16 +2,20 @@
 <html lang="en">
 
 <head>
+    <meta name="title" content="Squareeyes">
+    <meta name="description" content="About Squareeyes">
+    <meta name="keywords" content="movies, film, art">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="headerstyles.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="footerstyles.css">
-    <link rel="stylesheet" href="cart.css">
-    <script src="script.js" async defer></script>
-    <script src="cart.js" async defer></script>
+    <link rel="stylesheet" href="./styles/headerstyles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/footerstyles.css">
+    <link rel="stylesheet" href="./styles/cart.css">
+    <script src="./scripts/navbar.js" async defer></script>
+    <script src="./scripts/script.js" async defer></script>
+    <script src="./scripts/cart.js" async defer></script>
     <title>PROFILE</title>
 </head>
 
@@ -38,7 +42,7 @@
             </div>
         </nav>
     </header>
-    <main class="page-container">
+    <main class="content-container">
         <div class="profile-header">
             <h1 class="profile-h1 header-element">MY PROFILE</h1>
             <div class="view-cart-container">
@@ -60,11 +64,10 @@
             </div>
         </div>
         <div class="my-movie-wrapper">
-            <div class="my-movies-header">
-                <h4>My Movies</h4>
-            </div>
             <div id="myMovies" class="my-movies profile-page">
-
+                <div class="my-movies-header">
+                    <h2>My Movies</h2>
+                </div>
             </div>
         </div>
         <div class="cart-container hidden">
@@ -76,7 +79,7 @@
             <!-- items will be added here -->
             <div class="items-container"></div>
             <div class="checkout-container">
-                <button class="checkout-btn">Checkout</button>
+                <button id="checkout-btn">Checkout</button>
             </div>
         </div>
     </main>

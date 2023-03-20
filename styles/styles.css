@@ -414,11 +414,25 @@ BROWSEINDEX_PAGE
   font-size: 20px;
 }
 
-.movies_row {
+.browse_index_row {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   flex-direction: row;
+  justify-content: center;
+}
+
+.movie-title {
+  flex: 1;
+  font-size: 100%;
+  max-width: 175px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-price {
+  flex: 1;
 }
 
 #movie-container {
@@ -431,18 +445,44 @@ BROWSEINDEX_PAGE
   padding: 0% 1%;
 }
 
-.movie {
+.movie-card {
   flex: 1;
-}
-
-.movie_thumb {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
+  padding: 0px 15px;
 }
 
-.poster {
-  position: relative; /* add this line */
+.index-row-headers {
+  flex: 2;
+  text-align: left;
+  margin: 1% 5%;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.movie-poster-wrapper {
+  flex: 1;
+  width: 180px;
+  height: 275px;
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 10%;
+  border: 1px solid var(--text);
+}
+
+.movie-poster:hover {
+  transform: scale(1.1);
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
 }
 
 .poster_img {
@@ -497,7 +537,7 @@ PROFILE
 }
 
 .cart-image-wrapper {
-   width: 100px;
+  width: 100px;
 }
 
 .cart-image {
@@ -532,7 +572,7 @@ PROFILE
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: center;
+  align-content: flex-start;
   align-items: center;
 }
 
@@ -541,11 +581,12 @@ PROFILE
 }
 
 .purchased-movie-image-wrapper {
-  width: 135px;
+  width: 100px;
 }
 
 .purchased-movie-image {
   width: 100%;
+  border: 1px solid var(--text);
 }
 /*ABOUTMOVVIE*/
 
