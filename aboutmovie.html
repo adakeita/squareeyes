@@ -3,7 +3,7 @@
 
 <head>
     <meta name="title" content="Squareeyes">
-    <meta name="description" content="About Squareeyes">
+    <meta name="description" content="About Selevted Movie">
     <meta name="keywords" content="movies, film, art">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,8 @@
     <script src="./scripts/navbar.js" async defer></script>
     <script src="./scripts/script.js" async defer></script>
     <script src="./scripts/movies.js" async defer></script>
-    <title>SCREAM</title>
+    <script src="./scripts/cart.js" async defer></script>
+    <title>${title}</title>
 </head>
 
 <body>
@@ -60,18 +61,18 @@
                     <a class="purchase-link-tag" href="#">
                         <div class="buy-now-btn buy-image-wrapper info-btn-image-wrapper">
                             <img class="info-btn-image purchase-btn-image" src="./iconsbuttons/buy.png"
-                                alt="button to purhase site">
+                                alt="button to purhase">
                         </div>
                     </a>
                 </div>
-                <div class="buy-btn-container cart-btn-container info-row-btns">
+                <button id="cart-aboutmovie-btn" class="buy-btn-container cart-btn-container add-to-cart-btn info-row-btns">
                     <a class="purchase-link-tag" href="#">
                         <div class="add-cart-btn buy-image-wrapper info-btn-image-wrapper">
                             <img class="info-btn-image cart-btn-image" src="./iconsbuttons/add-to-cart.png"
-                                alt="button to cart site">
+                                alt="button to cart">
                         </div>
                     </a>
-                </div>
+                </button>
             </div>
             <div class="rate-movie">
                 <div class="rate-btn-container info-row-btns">
@@ -93,9 +94,22 @@
             </div>
         </div>
         <div class="info-overview-wrapper">
-                       <!--genrated by movies.js, overview text --> 
+            <!--genrated by movies.js, overview text -->
         </div>
     </main>
+    <div class="cart-container hidden">
+        <div class="exit-container hidden">
+            <button class="exit">
+                <img src="iconsbuttons/cross.png" class="close-cart" alt="icon for close checkout ">
+            </button>
+        </div>
+        <!-- items will be added here -->
+        <div class="items-container"></div>
+        <div class="checkout-container">
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
     <footer id="footer">
         <div class="footer-content">
             <div class="connect-socials footer-element">

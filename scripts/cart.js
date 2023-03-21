@@ -1,10 +1,9 @@
 const viewCartBtn = document.querySelector(".cart-image-wrapper");
-const addToCartBtn = document.querySelector(".cart-btn");
 const checkoutBtn = document.querySelector("#checkout-btn");
 const cartContainer = document.querySelector(".cart-container");
 const exitContainer = document.querySelector(".exit-container");
 const itemsContainer = document.querySelector(".items-container");
-const buyNowBtn = document.querySelectorAll(".cart_image_wrapper");
+const addToCartBtn = document.querySelectorAll(".add-to-cart-btn");
 
 if (viewCartBtn) {
     viewCartBtn.addEventListener("click", () => {
@@ -58,132 +57,44 @@ function showCartItems() {
     });
 }
 
-if (addToCartBtn) {
+addToCartBtn.forEach(addToCartBtn => {
     addToCartBtn.addEventListener("click", () => {
-        addToCart();
+        addToCart(addToCartBtn);
         cartContainer.classList.remove("hidden");
         exitContainer.classList.remove("hidden");
     });
+});
 
-    exitContainer.addEventListener("click", () => {
-        cartContainer.classList.add("hidden");
-    });
-}
-
-function addToCart() {
+function addToCart(movieId, movieTitle, moviePrice, movieImage) {
     if (!cartContainer) {
         return;
     }
 
-    if (addToCartBtn) {
-        const movieItems = document.querySelectorAll('.movie-item');
-        let selectedMovie = '';
+    // create a new cart item element
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+    cartItem.innerHTML = `
+      <img src="${movieImage}" alt="${movieTitle} image">
+      <h4>${movieTitle}</h4>
+      <p>${moviePrice}</p>
+      <button class="remove-btn">Remove</button>
+    `;
 
-        movieItems.forEach(item => {
-            item.addEventListener('click', () => {
-                selectedMovie = item.id;
-                console.log('Selected movie:', selectedMovie);
-            });
-        });
+    // add the cart item to the cart container's items container
+    cartItem.setAttribute("data-movie-id", movieId);
+    const cartItemsContainer = cartContainer.querySelector(".items-container");
+    const cartItems = cartItemsContainer.querySelectorAll(".cart-item");
+    const alreadyInCart = Array.from(cartItems).some(item => item.getAttribute("data-movie-id") === movieId);
 
-
-        // store the selected movie details in localStorage
-        localStorage.setItem(`movie-${movieItem.getAttribute("id")}`, JSON.stringify({
-            title: movieItem.querySelector("h3").textContent,
-            price: movieItem.querySelector(".price").textContent,
-            imageUrl: movieItem.querySelector("img").getAttribute("src"),
-        }));
-
-        // create a new cart item element
-        const cartItem = document.createElement("div");
-        cartItem.classList.add("cart-item");
-        cartItem.innerHTML = `
-          <img src="${movieItem.querySelector("img").getAttribute("src")}" alt="${movieItem.querySelector("h3").textContent} image">
-          <h4>${movieItem.querySelector("h3").textContent}</h4>
-          <p>${movieItem.querySelector(".price").textContent}</p>
-          <button class="remove-btn">Remove</button>
-        `;
-
-        // add the cart item to the cart container"s items container
-        const movieId = movieItem.getAttribute("id");
-        cartItem.setAttribute("data-movie-id", movieId);
-        const cartItemsContainer = cartContainer.querySelector(".items-container");
-        const cartItems = cartItemsContainer.querySelectorAll(".cart-item");
-        const alreadyInCart = Array.from(cartItems).some(item => item.textContent === cartItem.textContent);
-
-        if (!alreadyInCart) {
-            cartItemsContainer.appendChild(cartItem);
-        }
-
-        // add event listener to the remove button
-        const removeBtn = cartItem.querySelector(".remove-btn");
-        removeBtn.addEventListener("click", () => {
-            const cartItem = removeBtn.parentElement;
-            cartItem.remove(); // remove the cart item from the cart container
-        });
-
-        showCartItems();
+    if (!alreadyInCart) {
+        cartItemsContainer.appendChild(cartItem);
     }
+
+    // add event listener to the remove button
+    const removeBtn = cartItem.querySelector(".remove-btn");
+    removeBtn.addEventListener("click", () => {
+        const cartItem = removeBtn.parentElement;
+        cartItem.remove();
+    });
 }
 
-
-checkoutBtn.addEventListener("click", () => {
-    const cartItems = cartContainer.querySelectorAll(".cart-item");
-    const purchasedMovies = JSON.parse(localStorage.getItem("purchasedMovies")) || [];
-    let movieAdded = false; // flag to check if any movies were added to cart
-
-    if (cartItems.length > 0) {
-        cartItems.forEach(item => {
-            const movieId = item.getAttribute("data-movie-id");
-            const movieDetails = JSON.parse(localStorage.getItem(`movie-${movieId}`));
-
-            // Check if the movie is already purchased
-            if (purchasedMovies.some(movie => movie.id === movieDetails.id)) {
-                alert("You already have this movie!");
-            } else {
-                purchasedMovies.push(movieDetails);
-                movieAdded = true; // set flag to true if movie was added to cart
-            }
-
-            item.remove();
-        });
-
-        cartContainer.classList.add("hidden");
-        localStorage.setItem("purchasedMovies", JSON.stringify(purchasedMovies));
-
-        // Delay the alert by 100 milliseconds to ensure localStorage is updated
-        if (movieAdded) { // check flag before displaying alert
-            setTimeout(() => {
-                alert("Thank you for your purchase! Your movies have been added to your account.");
-            }, 100);
-        }
-    } else {
-        alert("Your cart is empty!");
-    }
-});
-
-function showPurchasedMovies() {
-    const myMoviesContainer = document.querySelector("#myMovies");
-    if (myMoviesContainer) {
-        const purchasedMovies = JSON.parse(localStorage.getItem("purchasedMovies"));
-        if (purchasedMovies && purchasedMovies.length > 0) {
-            purchasedMovies.forEach(movie => {
-                const purchasedMovie = document.createElement("div");
-                purchasedMovie.classList.add("purchased-movie");
-                purchasedMovie.innerHTML = `
-            <h3 class="purchased-movie-title purchased-element">${movie.title}</h3>
-            <div class="purchased-movie-image-wrapper purchased-element">
-              <img class="purchased-movie-image" src="${movie.imageUrl}" alt="${movie.title} image">
-            </div>
-            <p class="purchased-movie-price purchased-element">Price: ${movie.price}$</p>
-          `;
-                myMoviesContainer.appendChild(purchasedMovie);
-            });
-        } else {
-            const noMoviesMessage = document.createElement("p");
-            noMoviesMessage.innerHTML = "You haven't purchased any films yet.";
-            myMoviesContainer.appendChild(noMoviesMessage);
-        }
-    }
-}
-showPurchasedMovies();

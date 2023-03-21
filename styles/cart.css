@@ -2,17 +2,17 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 45%;
     height: 100vh;
     background-color: black;
     z-index: 9999;
     padding: 20px;
     overflow-y: auto;
-    border: none;
+    border-left: 1px solid #11b0e1;
 }
 
 .exit-container {
-    margin: 0;
+    margin: 10px 0;
     flex: 1;
     display: flex;
     align-items: center;
@@ -62,3 +62,46 @@
 .remove-btn {
     margin-left: auto;
 }
+
+/*
+Cart_BROWSEINDEX
+*/
+
+.bottom-movie-card-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 0.5;
+    width: 175px;
+}
+
+.browseindex-cart-btn {
+    background: none;
+    border: none;
+}
+
+.pricewrapper,
+.browseindex-cart-btn {
+    flex: 1;
+    padding: 0px 5px;
+    width: 60px;
+    font-size: 17px;
+}
+
+.add-cart-btn {
+    width: 50px;
+    height: auto;
+    padding: 0;
+}
+
+/*.bottom-movie-card-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 0.5;
+    width: 150px;
+}*/

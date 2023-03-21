@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="./styles/headerstyles.css">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/footerstyles.css">
+    <link rel="stylesheet" href="./styles/cart.css">
     <script src="./scripts/navbar.js" async defer></script>
     <script src="./scripts/movies.js" async defer></script>
+    <script src="./scripts/script.js" async defer></script>
+    <script src="./scripts/cart.js" async defer></script>
     <title>Browse</title>
 </head>
 
@@ -58,10 +61,6 @@
             </h2>
         </div>
         <div class="browse_index_row new_movies_container">
-            <div class="movie-container"></div>
-            <div class="movie-container"></div>
-            <div class="movie-container"></div>
-            <div class="movie-container"></div>
         </div>
         <div class="index-row-headers">
             <h2 class="index-row-h2">
@@ -69,12 +68,21 @@
             </h2>
         </div>
         <div class="browse_index_row your_movies_container">
-            <div class="movie-container"></div>
-            <div class="movie-container"></div>
-            <div class="movie-container"></div>
-            <div class="movie-container"></div>
+
         </div>
     </main>
+    <div class="cart-container hidden">
+        <div class="exit-container hidden">
+            <button class="exit">
+                <img src="iconsbuttons/cross.png" class="close-cart" alt="icon for close checkout ">
+            </button>
+        </div>
+        <!-- items will be added here -->
+        <div class="items-container"></div>
+        <div class="checkout-container">
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </div>
 
     <footer id="footer">
         <div class="footer-content">

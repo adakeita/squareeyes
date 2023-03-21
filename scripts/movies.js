@@ -19,7 +19,19 @@ function createMovieCard(movie) {
             <div class="movie-poster-wrapper">
                 <img class="movie-poster" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} poster" data-id="${movie.id}">
             </div>
-            <p class="movie-price">$${Math.floor(Math.random() * 10 + 1)}.99</p>
+            <div class="bottom-movie-card-container">
+                 <div class="pricewrapper">
+                     <p class="movie-price">$${Math.floor(Math.random() * 10 + 1)}.99</p>
+                  </div>
+               <button id="cart-browseindex-btn" class="browseindex-cart-btn add-to-cart-btn">
+                 <a class="cart-link-tag" href="#">
+                    <div class="add-cart-btn buy-image-wrapper info-btn-image-wrapper">
+                        <img class="info-btn-image cart-btn-image" src="./iconsbuttons/add-to-cart.png"
+                                alt="button to cart">
+                    </div>
+                  </a>
+                </button>
+            </div>
         </div>
     `;
     const movieCard = document.createElement("div");
@@ -66,9 +78,11 @@ movieIds.forEach(async (movieId, index) => {
 window.addEventListener("load", () => {
     const params = new URLSearchParams(window.location.search);
     const movieId = params.get("id");
+    console.log("movieId:", movieId);
 
     if (movieId) {
         const movieDetailsContainer = document.querySelector(".movie-details");
+        console.log("movieDetailsContainer:", movieDetailsContainer);
         const movieDetailsUrl = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=en-US`;
 
         fetch(movieDetailsUrl)
@@ -79,6 +93,7 @@ window.addEventListener("load", () => {
                 movieTitle.textContent = movieDetails.title;
 
                 const overviewWrapper = document.querySelector(".info-overview-wrapper");
+                console.log("overviewWrapper:", overviewWrapper);
 
                 const headerPriceWrapper = document.createElement("div");
                 headerPriceWrapper.classList.add("header-price-wrapper");
@@ -145,9 +160,28 @@ window.addEventListener("load", () => {
                             moviePosterWrapper.appendChild(moviePoster);
                         }
 
+                        const cartBtn = document.querySelector("#cart-aboutmovie-btn");
+                        if (cartBtn) {
+
+                            cartBtn.addEventListener("click", () => {
+                                const movieTitle = document.querySelector(".movie-info-title").textContent;
+                                const moviePrice = document.querySelector(".movie-info-price").textContent;
+                                const movieImage = document.querySelector(".movie-info-poster") ? document.querySelector(".movie-info-poster").src : "";
+                                addToCart(movieId, movieTitle, moviePrice, movieImage);
+
+                                cartContainer.classList.remove("hidden");
+                                exitContainer.classList.remove("hidden");
+
+                            });
+                            
+                            exitContainer.addEventListener("click", () => {
+                                cartContainer.classList.add("hidden");
+                            });
+                            
+                        }
+                        (error => console.error("Error fetching movie videos data:", error));
                     })
-                    .catch(error => console.error("Error fetching movie videos data:", error));
+                    .catch(error => console.error("Error fetching movie data:", error));
             })
-            .catch(error => console.error("Error fetching movie data:", error));
     }
-});
+})
