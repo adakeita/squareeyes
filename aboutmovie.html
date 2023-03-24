@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/footerstyles.css">
     <link rel="stylesheet" href="./styles/cart.css">
-    <script src="./scripts/navbar.js" async defer></script>
-    <script src="./scripts/script.js" async defer></script>
-    <script src="./scripts/movies.js" async defer></script>
-    <script src="./scripts/cart.js" async defer></script>
-    <title>${title}</title>
+    <script src="./scripts/globals.js" type="module"  defer></script>
+    <script src="./scripts/navbar.js" type="module" defer></script>
+    <script src="./scripts/users.js" type="module" defer></script>
+    <script src="./scripts/movies.js" type="module" defer></script>
+    <script src="./scripts/cart.js" type="module" defer></script>
+    <script src="./scripts/script.js" type="module" defer></script>
+    <title>${movie-details.title}</title>
 </head>
 
 <body>
@@ -57,21 +59,19 @@
 
         <div class="info-row-btn-container">
             <div class="buy-movie">
-                <div class="buy-btn-container info-row-btns buy-now-btn-container">
-                    <a class="purchase-link-tag" href="#">
+                <div id="buy-now-btn" 
+                class="buy-btn-container info-row-btns buy-now-btn-container">
                         <div class="buy-now-btn buy-image-wrapper info-btn-image-wrapper">
                             <img class="info-btn-image purchase-btn-image" src="./iconsbuttons/buy.png"
                                 alt="button to purhase">
                         </div>
-                    </a>
                 </div>
-                <button id="cart-aboutmovie-btn" class="buy-btn-container cart-btn-container add-to-cart-btn info-row-btns">
-                    <a class="purchase-link-tag" href="#">
+                <button id="cart-aboutmovie-btn"
+                    class="buy-btn-container cart-btn-container add-to-cart-btn info-row-btns">
                         <div class="add-cart-btn buy-image-wrapper info-btn-image-wrapper">
                             <img class="info-btn-image cart-btn-image" src="./iconsbuttons/add-to-cart.png"
                                 alt="button to cart">
                         </div>
-                    </a>
                 </button>
             </div>
             <div class="rate-movie">
@@ -105,8 +105,10 @@
         </div>
         <!-- items will be added here -->
         <div class="items-container"></div>
+        <div class="cart-item"></div>
+        <div class="total-container"></div>
         <div class="checkout-container">
-            <button id="checkout-btn">Checkout</button>
+            <button class="checkout-btn">Checkout</button>
         </div>
     </div>
 

@@ -2,15 +2,22 @@
 <html lang="en">
 
 <head>
+    <meta name="title" content="Squareeyes">
+    <meta name="description" content="About Selevted Movie">
+    <meta name="keywords" content="movies, film, art">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="headerstyles.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="footerstyles.css">
-    <script src="script.js" async defer></script>
-    <title>SquareEyes</title>
+    <link rel="stylesheet" href="./styles/headerstyles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/footerstyles.css">
+    <link rel="stylesheet" href="./styles/cart.css">
+    <script src="./scripts/globals.js" type="module"  defer></script>
+    <script src="./scripts/navbar.js" type="module" defer></script>
+    <script src="./scripts/users.js" type="module" defer></script>
+    <script src="./scripts/script.js" type="module" defer></script>
+    <title>Sign Up</title>
 </head>
 
 <body>
@@ -45,14 +52,25 @@
             <h1 class="signup-header header_signup_login signup_header">Sign Up</h1>
             <form>
                 <label class="label label_username" for="username">Username:</label>
-                <input type="text" id="username" name="username"><br>
+                <input class="signinout" type="text" id="username" name="username">
+
+                <label class="label" for="name">Name:</label>
+                <input class="signinout" type="text" id="name" name="name" required>
+
+                <label class="label" for="age">Age:</label>
+                <input class="signinout" type="number" id="age" name="age" required>
+
+                <label class="label" for="favorite-genre">Favorite Movie Genre:</label>
+                <input class="signinout" type="text" id="favorite-genre" name="favorite-genre" required>
+
+                <br>
 
                 <label class="label label_password" for="password">Password:</label>
-                <input type="password" id="password" name="password"><br>
+                <input class="signinout" type="password" id="password" name="password">
 
                 <label class="label label_password" for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword"><br>
-
+                <input class="signinout" type="password" id="confirmPassword" name="confirmPassword">
+                <br>
                 <input class="btn_signup_login signup-btn signup_btn" type="button" value="Sign Up"
                     onclick="authenticate(true)">
                 <input type="button" value="Cancel" onclick="location.href='login.html'">

@@ -3,7 +3,7 @@
 
 <head>
     <meta name="title" content="Squareeyes">
-    <meta name="description" content="About Squareeyes">
+    <meta name="description" content="About Selevted Movie">
     <meta name="keywords" content="movies, film, art">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/footerstyles.css">
     <link rel="stylesheet" href="./styles/cart.css">
-    <script src="./scripts/navbar.js" async defer></script>
-    <script src="./scripts/script.js" async defer></script>
-    <script src="./scripts/cart.js" async defer></script>
+    <script src="./scripts/globals.js" type="module"  defer></script>
+    <script src="./scripts/navbar.js" type="module" defer></script>
+    <script src="./scripts/users.js" type="module" defer></script>
+    <script src="./scripts/movies.js" type="module" defer></script>
+    <script src="./scripts/cart.js" type="module" defer></script>
+    <script src="./scripts/script.js" type="module" defer></script>
     <title>PROFILE</title>
 </head>
 
@@ -58,16 +61,17 @@
                 <img class="profile_avatar" src="./images/profile.png" alt="profile avatar">
             </div>
             <div class="profile-element personalia">
-                <p class="personalia-text">Name: </p>
-                <p class="personalia-text">Age: </p>
-                <p class="personalia-text">Favorite Genre:</p>
+                <p class="personalia-text">Name: <span id="name"></span></p>
+                <p class="personalia-text">Age: <span id="age"></span></p>
+                <p class="personalia-text">Favorite Genre: <span id="favorite-genre"></span></p>
             </div>
         </div>
         <div class="my-movie-wrapper">
+            <div class="my-movies-header">
+                <h2>My Movies</h2>
+            </div>
             <div id="myMovies" class="my-movies profile-page">
-                <div class="my-movies-header">
-                    <h2>My Movies</h2>
-                </div>
+
             </div>
         </div>
         <div class="cart-container hidden">
@@ -78,8 +82,10 @@
             </div>
             <!-- items will be added here -->
             <div class="items-container"></div>
+            <div class="cart-item"></div>
+            <div class="total-container"></div>
             <div class="checkout-container">
-                <button id="checkout-btn">Checkout</button>
+                <button class="checkout-btn">Checkout</button>
             </div>
         </div>
     </main>

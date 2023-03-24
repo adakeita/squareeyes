@@ -1,84 +1,25 @@
-const loginBtn = document.getElementById("login-btn");
-const logoutBtn = document.getElementById("logout-btn");
-const loginBtns = document.getElementById("login-btns-container");
-const loggedinBtns = document.getElementById("loggedin-btns-container");
-const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
-const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
+import { purchasedMovies, myMoviesContainer } from './globals.js';
 
-let userIsLoggedIn = false;
-if (localStorage.getItem("currentUser")) {
-    userIsLoggedIn = true;
-}
+// Render purchased movies
+if (myMoviesContainer) {
+    purchasedMovies.forEach(movie => {
+        if (movie) {
+            const movieElement = document.createElement("div");
+            movieElement.classList.add("my-movie");
 
-if (userIsLoggedIn) {
-    loginBtn?.classList.add("hidden");
-    loginBtns?.classList.add("hidden");
-    loggedinBtns?.classList.remove("hidden");
-    logoutBtn.classList.remove("hidden");
-    btnsIsLoggedOut.forEach(btn => btn.classList.add("hidden"));
-    btnsIsLoggedIn.forEach(btn => btn.classList.remove("hidden"));
-} else {
-    loginBtns?.classList.remove("hidden");
-    loggedinBtns?.classList.add("hidden");
-    logoutBtn?.classList.add("hidden");
-    btnsIsLoggedOut.forEach(btn => btn.classList.remove("hidden"));
-    btnsIsLoggedIn.forEach(btn => btn.classList.add("hidden"));
-}
+            const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+            const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
+            const movieTitle = `<h3 class="my-movie-title">${movie.title}</h3>`;
 
+            const posterContainer = document.createElement("div");
+            posterContainer.classList.add("my-movie-poster-container");
+            posterContainer.innerHTML = posterImage;
 
-function authenticate(isSignUp) {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    let confirmPassword = "";
-
-    if (isSignUp) {
-        confirmPassword = document.getElementById("confirmPassword").value;
-        if (!confirmPassword) {
-            alert("Please confirm password.");
-            return false;
+            movieElement.innerHTML += movieTitle;
+            movieElement.appendChild(posterContainer);
+            myMoviesContainer.appendChild(movieElement);
         }
-
-        if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-            return false;
-        }
-
-        if (localStorage.getItem(username)) {
-            alert("Username already exists.");
-            return false;
-        }
-
-        // Initialize purchasedMovies to empty array if it does not exist in localStorage
-        if (!localStorage.getItem('purchasedMovies')) {
-            localStorage.setItem('purchasedMovies', JSON.stringify([]));
-        }
-        localStorage.removeItem('currentUser'); // remove currentUser if signing up
-
-        localStorage.setItem(username, password);
-        alert("Account created successfully!");
-        window.location.href = "login.html";
-        return true;
-    }
-
-    if (!username || !password) {
-        alert("Please enter both username and password.");
-        return false;
-    }
-
-    if (localStorage.getItem(username) === password) {
-        alert("Login successful!");
-        localStorage.setItem("currentUser", username);
-        window.location.href = "index.html";
-        return true;
-    }
-
-    alert("Invalid username or password.");
-    return false;
-}
-
-function logout() {
-    localStorage.removeItem("currentUser");
-    window.location.href = "login.html";
+    });
 }
 
 //FAQ
@@ -100,6 +41,3 @@ faq.forEach((item) => {
         toggle.textContent = toggle.textContent === "+" ? "-" : "+";
     });
 });
-
-
-

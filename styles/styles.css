@@ -359,9 +359,10 @@ LOGIN_PAGE
 
 .login,
 .signup {
+  font-size: 18px;
   padding: 5%;
   margin: 0% auto;
-  width: 40%;
+  width: 60%;
 }
 
 .login-header,
@@ -379,9 +380,8 @@ form {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-  padding: 5px;
+.signinout {
+  padding: 10px;
   margin-bottom: 10px;
   border: none;
   border-radius: 3px;
@@ -566,28 +566,26 @@ PROFILE
 }
 
 #myMovies {
+  display: flex;
+  flex-wrap: wrap;
   margin: 2% 0%;
 }
 
-.purchased-movie {
+.my-movie {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: flex-start;
   align-items: center;
 }
 
-.purchased-element {
-  flex: 1;
-}
-
-.purchased-movie-image-wrapper {
-  width: 100px;
-}
-
-.purchased-movie-image {
-  width: 100%;
+.my-movie-poster-container {
+  width: 135px;
   border: 1px solid var(--text);
+}
+
+.my-movie-poster {
+  width: 100%;
 }
 /*ABOUTMOVIE*/
 
@@ -621,12 +619,6 @@ PROFILE
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 5px 1px;
-}
-
-.info-btn-image-wrapper {
-  width: 100px;
-  height: 50px;
   padding: 5px 5px;
   border-radius: 10%;
 }
@@ -635,6 +627,13 @@ PROFILE
   transform: scale(1.1);
   background-color: var(--se_main);
   transition: 0.25s ease-in-out;
+}
+
+.info-btn-image-wrapper {
+  width: 100px;
+  height: 50px;
+  padding: 3px;
+  border-radius: 10%;
 }
 
 .info-btn-image {
