@@ -965,4 +965,8 @@ ABOUTMOV_PAGE
     flex: 1;
     margin: 0% 5%;
   }
+
+  .reviewpic {
+    width: 75%;
+  }
 }
