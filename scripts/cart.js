@@ -6,6 +6,7 @@ const cartItem = document.querySelector(".cart-item")
 const viewCartBtn = document.querySelector('.view-cart-btn');
 const checkoutBtns = document.querySelectorAll(".checkout-btn");
 const cartKey = `cartItems-${currentUser}`;
+const buyNowBtn = document.getElementById("buy-now-btn");
 
 // Load cart items from localStorage on page load
 let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
@@ -155,13 +156,23 @@ function checkout() {
     // Create array of purchased movie titles
     const purchasedTitles = cartItems.map(item => item.title);
 
+    const ownedMovies = purchasedMovies.filter(item => purchasedTitles.includes(item.title));
+    if (ownedMovies.length > 0) {
+        // Display alert if user already owns any of the purchased movies
+        const ownedMovieTitles = ownedMovies.map(item => item.title).join('\n');
+        const message = `You already own the following movies:\n\n${ownedMovieTitles}\n\nDo you still want to purchase the other movies?`;
+        const confirmed = confirm(message);
+        if (!confirmed) {
+            return;
+        }
+    }
+
     // Display confirmation message with titles and total
     const confirmMessage = `Are you sure you want to purchase the following movies?\n\n${purchasedTitles.join("\n")}\n\nTotal: $${total}`;
     const confirmed = confirm(confirmMessage);
 
     // Save purchased movies to local storage and clear cart
     if (confirmed) {
-        const purchasedMovies = JSON.parse(localStorage.getItem(`purchasedItems-${currentUser}`)) || [];
         purchasedMovies.push(...cartItems);
         localStorage.setItem(`purchasedItems-${currentUser}`, JSON.stringify(purchasedMovies));
 
@@ -183,24 +194,56 @@ checkoutBtns.forEach(btn => {
     btn.addEventListener("click", checkout);
 });
 
+
+
+if (buyNowBtn) {
+    buyNowBtn.addEventListener("click", () => {
+        const params = new URLSearchParams(window.location.search);
+        const movieId = params.get("id");
+
+        if (movieId) {
+            const movieDetailsUrl = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=en-US`;
+
+            fetch(movieDetailsUrl)
+                .then((response) => response.json())
+                .then((movieDetails) => {
+                    addToCart(movieDetails);
+                    checkout();
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+        }
+    });
+}
+
+
 const myMoviesContainer = document.querySelector("#myMovies");
 
 // Render purchased movies
 purchasedMovies.forEach(movie => {
     if (myMoviesContainer) {
-        const movieElement = document.createElement("div");
-        movieElement.classList.add("my-movie");
+        if (purchasedMovies.length === 0) {
+            const messageElement = document.createElement("p");
+            messageElement.textContent = "You haven't purchased any movies yet.";
+            myMoviesContainer.appendChild(messageElement);
+        } else {
+            purchasedMovies.forEach(movie => {
+                const movieElement = document.createElement("div");
+                movieElement.classList.add("my-movie");
 
-        const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-        const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
-        const movieTitle = `<h3 class="my-movie-title">${movie.title}</h3>`;
+                const movieTitle = `<h3 class="my-movie-title">${movie.title}</h3>`;
+                const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+                const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
 
-        const posterContainer = document.createElement("div");
-        posterContainer.classList.add("my-movie-poster-container");
-        posterContainer.innerHTML = posterImage;
+                const posterContainer = document.createElement("div");
+                posterContainer.classList.add("my-movie-poster-container");
+                posterContainer.innerHTML = posterImage;
 
-        movieElement.innerHTML += movieTitle;
-        movieElement.appendChild(posterContainer);
-        myMoviesContainer.appendChild(movieElement);
+                movieElement.innerHTML += movieTitle;
+                movieElement.appendChild(posterContainer);
+                myMoviesContainer.appendChild(movieElement);
+            });
+        }
     }
 });

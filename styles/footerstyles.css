@@ -1,6 +1,5 @@
 #footer {
-    position: static;
-    bottom: 0;
+
     width: 100vw;
     margin-top: 75px;
 }
@@ -65,5 +64,5 @@
 
 .attr-text {
     flex: 1;
-    font-size: 60%;
+    font-size: 90%;
 }

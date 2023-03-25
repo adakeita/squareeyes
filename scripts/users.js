@@ -12,6 +12,7 @@ const nameElement = document.getElementById("name");
 const ageElement = document.getElementById("age");
 const favoriteGenreElement = document.getElementById("favorite-genre");
 const purchasedMovies = JSON.parse(localStorage.getItem(`purchasedItems-${currentUser}`)) || [];
+const personalia = document.querySelector(".personalia");
 
 let userIsLoggedIn = false;
 if (currentUser) {
@@ -115,14 +116,8 @@ function logout() {
 
 // Get the "My Movies" container
 
-if (nameElement) {
-    nameElement.textContent = user.name;
-}
-
-if (ageElement) {
-    ageElement.textContent = user.age;
-}
-
-if (favoriteGenreElement) {
-    favoriteGenreElement.textContent = user.favoriteGenre;
+if (personalia) {
+nameElement.textContent = user.name;
+ageElement.textContent = user.age;
+favoriteGenreElement.textContent = user.favoriteGenre;
 }
