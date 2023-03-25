@@ -158,12 +158,18 @@ function checkout() {
 
     const ownedMovies = purchasedMovies.filter(item => purchasedTitles.includes(item.title));
     if (ownedMovies.length > 0) {
-        // Display alert if user already owns any of the purchased movies
-        const ownedMovieTitles = ownedMovies.map(item => item.title).join('\n');
-        const message = `You already own the following movies:\n\n${ownedMovieTitles}\n\nDo you still want to purchase the other movies?`;
-        const confirmed = confirm(message);
-        if (!confirmed) {
+        // Remove movies that user already owns from the cart
+        const newCartItems = cartItems.filter(item => !ownedMovies.map(m => m.title).includes(item.title));
+        if (newCartItems.length === 0) {
+            alert(`You already own all the movies in your cart.`);
             return;
+        } else {
+            // Display alert with removed movie titles
+            const ownedMovieTitles = ownedMovies.map(item => item.title).join('\n');
+            const message = `You already own the following movies:\n\n${ownedMovieTitles}\n\nThe following movies have been removed from your cart:\n\n${cartItems.filter(item => !newCartItems.includes(item)).map(item => item.title).join('\n')}`;
+            alert(message);
+            cartItems = newCartItems;
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
         }
     }
 
@@ -234,15 +240,39 @@ purchasedMovies.forEach(movie => {
 
                 const movieTitle = `<h3 class="my-movie-title">${movie.title}</h3>`;
                 const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-                const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
 
-                const posterContainer = document.createElement("div");
-                posterContainer.classList.add("my-movie-poster-container");
-                posterContainer.innerHTML = posterImage;
+                // Construct URL for movie video clip using TMDB API
+                const videoUrl = `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${apiKey}&language=en-US`;
+                fetch(videoUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.results.length > 0) {
+                            const videoKey = data.results[0].key;
+                            const posterImage = `<a href="https://www.youtube.com/watch?v=${videoKey}" target="_blank"><img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster"></a>`;
 
-                movieElement.innerHTML += movieTitle;
-                movieElement.appendChild(posterContainer);
-                myMoviesContainer.appendChild(movieElement);
+                            const posterContainer = document.createElement("div");
+                            posterContainer.classList.add("my-movie-poster-container");
+                            posterContainer.innerHTML = posterImage;
+
+                            movieElement.innerHTML += movieTitle;
+                            movieElement.appendChild(posterContainer);
+                            myMoviesContainer.appendChild(movieElement);
+                        } else {
+                            // If there are no video results, display movie poster without link
+                            const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
+                            movieElement.innerHTML += movieTitle;
+                            movieElement.innerHTML += posterImage;
+                            myMoviesContainer.appendChild(movieElement);
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        // If there is an error, display movie poster without link
+                        const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
+                        movieElement.innerHTML += movieTitle;
+                        movieElement.innerHTML += posterImage;
+                        myMoviesContainer.appendChild(movieElement);
+                    });
             });
         }
     }

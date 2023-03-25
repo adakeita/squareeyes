@@ -30,7 +30,7 @@ a {
 }
 
 .logoimage {
-    width: 65%;
+    width: 100%;
     transition: 0.3s ease-in-out;
 }
 
@@ -45,7 +45,7 @@ a {
 
 .nav-item {
     text-align: center;
-    font-size: 15px;
+    font-size: 17px;
     padding: 5px;
     display: flex;
     border-radius: 5%;
@@ -63,7 +63,7 @@ a {
 
 /* SCROLLED_DEFAULT*/
 #navbar.scrolled .logoimage {
-    width: 35%;
+    width: 65%;
 }
 
 #navbar.scrolled {
@@ -83,7 +83,7 @@ See styles.CSS*/
  Mediaqueries
  */
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
     .home {
         flex: 1;
         text-decoration: none;
@@ -95,7 +95,7 @@ See styles.CSS*/
     }
 
     .logoimage {
-        width: 85%;
+        width: 75%;
     }
 
     #navbar.scrolled {
@@ -118,7 +118,7 @@ See styles.CSS*/
 
     .nav-item.show {
         text-align: center;
-        font-size: 100%;
+        font-size: 20px;
         padding: 5px;
     }
 
@@ -163,6 +163,7 @@ See styles.CSS*/
     .menuIcon:hover {
         background-color: var(--se_main);
         transition: 0.2s ease-in-out;
+        padding: 5px;
     }
 
     #navbar .menu.open {

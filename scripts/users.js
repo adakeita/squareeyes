@@ -13,6 +13,7 @@ const ageElement = document.getElementById("age");
 const favoriteGenreElement = document.getElementById("favorite-genre");
 const purchasedMovies = JSON.parse(localStorage.getItem(`purchasedItems-${currentUser}`)) || [];
 const personalia = document.querySelector(".personalia");
+const deleteUserBtn = document.querySelector("#deleteUserBtn");
 
 let userIsLoggedIn = false;
 if (currentUser) {
@@ -114,10 +115,29 @@ function logout() {
     window.location.href = "index.html";
 }
 
+if (deleteUserBtn) {
+    deleteUserBtn.addEventListener("click", () => {
+        const confirmed = confirm("Are you sure you want to delete your user account? This cannot be undone.");
+
+        if (confirmed) {
+            // Delete user data from local storage
+            localStorage.removeItem(`purchasedItems-${currentUser}`);
+            localStorage.removeItem(`cartItems-${currentUser}`);
+            delete users[currentUser];
+            localStorage.setItem(`users`, JSON.stringify(users));
+            localStorage.removeItem(`loggedInUser`);
+
+            // Redirect to home page
+            window.location.href = "index.html";
+        }
+    });
+}
+
+
 // Get the "My Movies" container
 
 if (personalia) {
-nameElement.textContent = user.name;
-ageElement.textContent = user.age;
-favoriteGenreElement.textContent = user.favoriteGenre;
+    nameElement.textContent = user.name;
+    ageElement.textContent = user.age;
+    favoriteGenreElement.textContent = user.favoriteGenre;
 }

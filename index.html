@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./styles/cart.css">
     <script src="scripts/navbar.js" async defer></script>
     <script src="scripts/users.js" async defer></script>
-
     <title>SquareEyes</title>
 </head>
 
@@ -28,15 +27,15 @@
                 </div>
             </a>
             <ul class="navbar_links static menu default">
-                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
-                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
-                <li class="nav-item logged-in"><a class="menu-link" href="browseindex.html">BROWSE</a>
-                </li>
                 <li class="nav-item logged-in"><a class="menu-link" href="profile.html">PROFILE</a>
                 </li>
+                <li class="nav-item logged-in"><a class="menu-link" href="browseindex.html">BROWSE</a>
+                </li>
+                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
                 <li class="nav-item logged-out"><a class="menu-link" href="login.html">LOGIN</a></li>
                 <li class="nav-item logged-out"><a class="menu-link" href="signup.html">SIGNUP</a></li>
-                <li class="nav-item"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
+                <li class="nav-item"><a class="menu-link" href="community.html">COMMUNITY</a></li>
+                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
             </ul>
             <div class="button-container hide">
                 <button class="hamburger">
@@ -79,10 +78,10 @@
                     </a>
                 </div>
             </div>
-            <div class="index-image-buffer"></div>
         </div>
 
         <main class="page-container">
+            <div class="index-image-buffer"></div>
             <div class="stream_here">
                 <h2 class="index-heading download-header">Stream on all your devices</h2>
                 <div class="stream_column">
@@ -143,13 +142,14 @@
         </footer>
 </body><!--  Hotjar Tracking Code for  -->
 <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3423891,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    (function (h, o, t, j, a, r) {
+        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+        h._hjSettings = { hjid: 3423891, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
+
 </html>

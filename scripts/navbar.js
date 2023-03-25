@@ -17,7 +17,7 @@ function fixNavbar() {
     navbar.classList.toggle("scrolled", isScrolled);
     menuIcon.classList.toggle("scrolled", isScrolled);
 
-    if (window.innerWidth < 550) {
+    if (window.innerWidth < 600) {
         burgerContainer.classList.remove("hide");
         navbar.classList.toggle("scrolled", isScrolled);
         menuIcon.classList.toggle("scrolled", isScrolled);
