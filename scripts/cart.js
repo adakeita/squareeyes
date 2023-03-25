@@ -156,6 +156,7 @@ function checkout() {
     // Create array of purchased movie titles
     const purchasedTitles = cartItems.map(item => item.title);
 
+    // Check if any movies in cart have already been purchased by user
     const ownedMovies = purchasedMovies.filter(item => purchasedTitles.includes(item.title));
     if (ownedMovies.length > 0) {
         // Remove movies that user already owns from the cart
@@ -193,8 +194,8 @@ function checkout() {
         exitCartBtn.classList.add("hidden");
         alert(`Thank you for your purchase!\n\nYour movies can be found on your profile page.`);
     }
-
 }
+
 console.log("cartItems:", cartItems);
 checkoutBtns.forEach(btn => {
     btn.addEventListener("click", checkout);
