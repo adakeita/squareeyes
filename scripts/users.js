@@ -1,15 +1,17 @@
-import {
-    loginBtn,
-    loginBtns,
-    loggedinBtns,
-    logoutBtn,
-    btnsIsLoggedOut,
-    btnsIsLoggedIn,
-    users,
-    currentUser,
-    user,
-    username,
-  } from './globals.js';
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+const loginBtns = document.getElementById("login-btns-container");
+const loggedinBtns = document.getElementById("loggedin-btns-container");
+const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
+const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
+const username = document.getElementById("username");
+const users = JSON.parse(localStorage.getItem("users")) || {};
+let currentUser = localStorage.getItem("currentUser");
+let user = currentUser ? users[currentUser] : null;
+const nameElement = document.getElementById("name");
+const ageElement = document.getElementById("age");
+const favoriteGenreElement = document.getElementById("favorite-genre");
+const purchasedMovies = JSON.parse(localStorage.getItem(`purchasedItems-${currentUser}`)) || [];
 
 let userIsLoggedIn = false;
 if (currentUser) {
@@ -43,6 +45,12 @@ function authenticate(isSignUp) {
         const name = document.getElementById("name").value;
         const age = document.getElementById("age").value;
         const favoriteGenre = document.getElementById("favorite-genre").value;
+
+        if (user) {
+            nameElement.textContent = user.name;
+            ageElement.textContent = user.age;
+            favoriteGenreElement.textContent = user.favoriteGenre;
+        }
 
         confirmPassword = document.getElementById("confirmPassword").value;
         if (!confirmPassword) {
@@ -102,17 +110,19 @@ function logout() {
     localStorage.removeItem("currentUser");
     currentUser = null;
     user = null;
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
-const nameElement = document.getElementById("name");
-const ageElement = document.getElementById("age");
-const favoriteGenreElement = document.getElementById("favorite-genre");
+// Get the "My Movies" container
 
 if (nameElement) {
-    if (user) {
-        nameElement.textContent = user.name;
-        ageElement.textContent = user.age;
-        favoriteGenreElement.textContent = user.favoriteGenre;
-    }
+    nameElement.textContent = user.name;
+}
+
+if (ageElement) {
+    ageElement.textContent = user.age;
+}
+
+if (favoriteGenreElement) {
+    favoriteGenreElement.textContent = user.favoriteGenre;
 }

@@ -1,8 +1,11 @@
-import { cartKey, purchasedItems, currentUser, cartContainer } from './globals.js';
 const addToCartBtn = document.querySelectorAll(".add-to-cart-btn");
-const exitCartBtn = document.querySelector(".exit-container");
-const viewCartBtn = document.querySelector(".view-cart-btn");
+const exitCartBtn = document.querySelector(".exit-container")
+const cartContainer = document.querySelector(".cart-container");
+const itemsContainer = cartContainer.querySelector(".items-container");
+const cartItem = document.querySelector(".cart-item")
+const viewCartBtn = document.querySelector('.view-cart-btn');
 const checkoutBtns = document.querySelectorAll(".checkout-btn");
+const cartKey = `cartItems-${currentUser}`;
 
 // Load cart items from localStorage on page load
 let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
@@ -14,13 +17,6 @@ function addToCart(movieDetails) {
     const existingMovie = cartItems.find(item => item.id === movieId);
     if (existingMovie) {
         console.log(`Movie ${movieId} is already in cart.`);
-        return;
-    }
-
-    // Check if movie is already purchased
-    const purchasedMovie = purchasedItems.find(item => item.id === movieId);
-    if (purchasedMovie) {
-        console.log(`Movie ${movieId} is already purchased.`);
         return;
     }
 
@@ -38,6 +34,19 @@ function addToCart(movieDetails) {
     renderCart();
 }
 
+function removeFromCart(movieId) {
+    cartItems = cartItems.filter(item => item.id !== movieId);
+    localStorage.setItem(cartKey, JSON.stringify(cartItems));
+
+    // Render cart items
+    renderCart();
+
+    // If cart is empty, hide the cart container and exit button
+    if (cartItems.length === 0) {
+        cartItem.innerHTML.textContent("No Movies in cart");
+    }
+}
+
 function calculateTotal() {
     const total = cartItems.reduce((acc, item) => acc + item.price, 0);
     return total.toFixed(2);
@@ -47,14 +56,10 @@ function renderCart() {
     const itemsContainer = document.querySelector(".items-container");
     const totalContainer = document.querySelector(".total-container");
 
+    cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
+
     // Clear previous items
     itemsContainer.innerHTML = "";
-
-    if (cartItems.length === 0) {
-        itemsContainer.innerHTML = "<p class='no-movies'>No movies in cart</p>";
-        totalContainer.textContent = "";
-        return;
-    }
 
     // Render cart items
     cartItems.forEach(item => {
@@ -96,22 +101,6 @@ function renderCart() {
 
     totalContainer.textContent = `Total: $${calculateTotal()}`;
 }
-
-function removeFromCart(movieId) {
-    cartItems = cartItems.filter(item => item.id !== movieId);
-    localStorage.setItem(cartKey, JSON.stringify(cartItems));
-
-    // Render cart items
-    renderCart();
-
-    // If cart is empty, hide the cart container and exit button
-    if (cartItems.length === 0) {
-        cartContainer.classList.add('hidden');
-        exitCartBtn.classList.add('hidden');
-    }
-}
-
-
 
 // Render cart items on page load
 renderCart();
@@ -171,13 +160,13 @@ function checkout() {
     const confirmed = confirm(confirmMessage);
 
     // Save purchased movies to local storage and clear cart
-    // Save purchased movies to local storage and clear cart
     if (confirmed) {
-        purchasedItems.push(...cartItems);
-        localStorage.setItem(`purchasedItems-${currentUser}`, JSON.stringify(purchasedItems));
+        const purchasedMovies = JSON.parse(localStorage.getItem(`purchasedItems-${currentUser}`)) || [];
+        purchasedMovies.push(...cartItems);
+        localStorage.setItem(`purchasedItems-${currentUser}`, JSON.stringify(purchasedMovies));
 
         cartItems = [];
-        localStorage.setItem(cartKey, JSON.stringify(cartItems));
+        localStorage.removeItem("cartItems");
 
         // Render empty cart
         renderCart();
@@ -192,4 +181,26 @@ function checkout() {
 console.log("cartItems:", cartItems);
 checkoutBtns.forEach(btn => {
     btn.addEventListener("click", checkout);
+});
+
+const myMoviesContainer = document.querySelector("#myMovies");
+
+// Render purchased movies
+purchasedMovies.forEach(movie => {
+    if (myMoviesContainer) {
+        const movieElement = document.createElement("div");
+        movieElement.classList.add("my-movie");
+
+        const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        const posterImage = `<img src="${posterUrl}" alt="${movie.title} poster" class="my-movie-poster">`;
+        const movieTitle = `<h3 class="my-movie-title">${movie.title}</h3>`;
+
+        const posterContainer = document.createElement("div");
+        posterContainer.classList.add("my-movie-poster-container");
+        posterContainer.innerHTML = posterImage;
+
+        movieElement.innerHTML += movieTitle;
+        movieElement.appendChild(posterContainer);
+        myMoviesContainer.appendChild(movieElement);
+    }
 });

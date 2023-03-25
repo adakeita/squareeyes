@@ -1,12 +1,30 @@
-import { movieIds, baseUrl, apiKey, cartContainer, moviePrices } from './globals.js';
+const apiKey = "4f8ed672bca5d88dde2fcbb70a60657c";
+const baseUrl = "https://api.themoviedb.org/3";
+const movieIds = [
+    481084,
+    646385,
+    384018,
+    463843,
+    301528,
+    414906,
+    466272,
+    373571
+];
 
-const [
-    newMoviesContainer,
-    yourMoviesContainer,
-] = document.querySelectorAll(".browse_index_row");
+const moviePrices = {
+    481084: 12.47,
+    646385: 9.99,
+    384018: 17.76,
+    463843: 11.31,
+    301528: 14.88,
+    414906: 16.99,
+    466272: 10.99,
+    373571: 15.50
+};
 
+const [newMoviesContainer, yourMoviesContainer] = document.querySelectorAll(".browse_index_row");
 
-export function createMovieCard(movie) {
+function createMovieCard(movie) {
     const movieCardHtml = `
         <div class="movie-card">
             <h2 class="movie-title">${movie.title}</h2>
@@ -15,7 +33,7 @@ export function createMovieCard(movie) {
             </div>
             <div class="bottom-movie-card-container">
                  <div class="pricewrapper">
-                     <p class="movie-price">$${movie.moviePrices}.99</p>
+                     <p class="movie-price">$${moviePrices[movie.id].toFixed(2)}</p>
                   </div>
             </div>
         </div>
@@ -40,6 +58,7 @@ async function fetchMovieData(movieId) {
 
 movieIds.forEach(async (movieId, index) => {
     const movie = await fetchMovieData(movieId);
+    
 
     if (!movie) {
         return;
@@ -60,7 +79,6 @@ movieIds.forEach(async (movieId, index) => {
         });
     }
 });
-
 
 window.addEventListener("load", () => {
     const params = new URLSearchParams(window.location.search);
@@ -106,10 +124,10 @@ window.addEventListener("load", () => {
                 overviewWrapper.appendChild(movieOverview);
 
                 if (cartContainer) {
-                    const cartPosterWrapper = document.createElement("div");
+                    cartPosterWrapper = document.createElement("div");
                     cartPosterWrapper.classList.add("cart-poster-wrapper");
 
-                    const cartPoster = document.createElement("img");
+                    cartPoster = document.createElement("img");
                     cartPoster.classList.add("cart-image-poster");
                     cartPoster.src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
                     cartPoster.alt = `${movieDetails.title} poster`;

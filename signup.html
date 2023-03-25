@@ -2,22 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta name="title" content="Squareeyes">
-    <meta name="description" content="About Selevted Movie">
-    <meta name="keywords" content="movies, film, art">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/headerstyles.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/footerstyles.css">
-    <link rel="stylesheet" href="./styles/cart.css">
-    <script src="./scripts/globals.js" type="module"  defer></script>
-    <script src="./scripts/navbar.js" type="module" defer></script>
-    <script src="./scripts/users.js" type="module" defer></script>
-    <script src="./scripts/script.js" type="module" defer></script>
-    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles/headerstyles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/footerstyles.css">
+    <script src="scripts/navbar.js" async defer></script>
+    <script src="scripts/users.js" async defer></script>
+    <title>SquareEyes</title>
 </head>
 
 <body>
@@ -61,7 +55,14 @@
                 <input class="signinout" type="number" id="age" name="age" required>
 
                 <label class="label" for="favorite-genre">Favorite Movie Genre:</label>
-                <input class="signinout" type="text" id="favorite-genre" name="favorite-genre" required>
+                <select class="signinout" id="favorite-genre" name="favorite-genre" required>
+                    <option value="">Select a genre</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Documentary">Documentary</option>
+                </select>
 
                 <br>
 

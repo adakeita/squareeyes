@@ -1,12 +1,12 @@
 // DOM elements
-export const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
-export const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
+export const username = document.getElementById("username");
+export const cartContainer = document.querySelector(".cart-container");
 export const loginBtn = document.getElementById("login-btn");
 export const logoutBtn = document.getElementById("logout-btn");
 export const loginBtns = document.getElementById("login-btns-container");
 export const loggedinBtns = document.getElementById("loggedin-btns-container");
-export const username = document.getElementById("username");
-export const cartContainer = document.querySelector(".cart-container");
+export const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
+export const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
 
 // API data
 export const apiKey = "4f8ed672bca5d88dde2fcbb70a60657c";
@@ -49,4 +49,3 @@ export const purchasedMovies = purchasedItems;
 
 
 // My Movies container
-export const myMoviesContainer = document.querySelector("#myMovies");
