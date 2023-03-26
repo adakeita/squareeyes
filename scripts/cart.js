@@ -8,7 +8,7 @@ const checkoutBtns = document.querySelectorAll(".checkout-btn");
 const cartKey = `cartItems-${currentUser}`;
 const buyNowBtn = document.getElementById("buy-now-btn");
 
-// Load cart items from localStorage on page load
+// Load cart from localStorage
 let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
 
 function addToCart(movieDetails, fromBuyNow = false) {
@@ -17,7 +17,7 @@ function addToCart(movieDetails, fromBuyNow = false) {
     // Check if movie is already in cart
     const existingMovie = cartItems.find(item => item.id === movieId);
     if (existingMovie) {
-        console.log(`Movie ${movieId} is already in cart.`);
+        alert(`Movie ${movieId} is already in cart.`);
         return;
     }
 
@@ -46,7 +46,7 @@ function removeFromCart(movieId) {
     // Render cart items
     renderCart();
 
-    // If cart is empty, hide the cart container and exit button
+    // If cart is empty, hide cart container
     if (cartItems.length === 0) {
         cartItem.innerHTML.textContent("No Movies in cart");
     }
@@ -72,20 +72,20 @@ function renderCart() {
         movie.classList.add("cart-movie");
         movie.setAttribute("data-id", item.id);
 
-        // Add movie image wrapper
+        // Add image wrapper
         const movieImageWrapper = document.createElement("div");
         movieImageWrapper.classList.add("cart-movie-image-wrapper");
         movieImageWrapper.classList.add("cart-movie-item");
         movie.appendChild(movieImageWrapper);
 
-        // Add movie image
+        // Add image
         const movieImage = document.createElement("img");
         movieImage.classList.add("cart-movie-image");
         movieImage.src = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
         movieImage.alt = `${item.title} poster`;
         movieImageWrapper.appendChild(movieImage);
 
-        // Add movie price
+        // Add price
         const moviePrice = document.createElement("p");
         moviePrice.classList.add("cart-movie-item");
         moviePrice.textContent = "$ " + item.price.toFixed(2);
@@ -107,17 +107,15 @@ function renderCart() {
     totalContainer.textContent = `Total: $${calculateTotal()}`;
 }
 
-// Render cart items on page load
+// Render cart items again
 renderCart();
 
 if (viewCartBtn) {
-    // Add event listener to "View Cart" button
     viewCartBtn.addEventListener('click', () => {
-        // Show cart container and exit button
+
         cartContainer.classList.remove('hidden');
         exitCartBtn.classList.remove('hidden');
 
-        // Render cart items
         renderCart();
     });
 }
@@ -155,13 +153,13 @@ exitCartBtn.addEventListener('click', () => {
 
 
 function checkout(items = cartItems) {
-    // Calculate total cost of purchased movies
+    // Calculate total cost
     const total = calculateTotal(items);
 
     // Create array of purchased movie titles
     const purchasedTitles = items.map(item => item.title);
 
-    // Check if any movies in cart have already been purchased by user
+    // Check if any movies in cart have already been purchased
     const ownedMovies = purchasedMovies.filter(item => purchasedTitles.includes(item.title));
 
     // Remove owned movies from cart items
@@ -172,11 +170,11 @@ function checkout(items = cartItems) {
         return;
     }
 
-    // Display confirmation message with titles and total
+    // Display confirmation
     const confirmMessage = `Are you sure you want to purchase the following movies?\n\n${newCartItems.map(item => item.title).join("\n")}\n\nTotal: $${total}`;
     const confirmed = confirm(confirmMessage);
 
-    // Save purchased movies to local storage and clear cart
+    // Save purchased movies to local storage and clear cart(unsure if working)
     if (confirmed) {
         purchasedMovies.push(...newCartItems);
         localStorage.setItem(`purchasedItems-${currentUser}`, JSON.stringify(purchasedMovies));
@@ -200,9 +198,9 @@ function checkout(items = cartItems) {
         exitCartBtn.classList.add("hidden");
 
         if (items.length === 1) {
-            alert(`Thank you for your purchase!\n\n"${newCartItems[0].title}" can be found on your profile page.`);
+            alert(`Thank you for your purchase!\n\n"${newCartItems[0].title}" can be found on your profile.`);
         } else {
-            alert(`Thank you for your purchase!\n\nYour movies can be found on your profile page.`);
+            alert(`Thank you for your purchase!\n\nYour movies can be found on your profile.`);
         }
     }
 }
@@ -258,7 +256,7 @@ if (myMoviesContainer) {
             const movieTitle = `<h3 class="my-movie-title">${movie.title}</h3>`;
             const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
-            // Construct URL for movie video clip using TMDB API
+            // Construct URL for movie video clip
             const videoUrl = `https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${apiKey}&language=en-US`;
             fetch(videoUrl)
                 .then(response => response.json())

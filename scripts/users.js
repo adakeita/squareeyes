@@ -102,6 +102,12 @@ function authenticate(isSignUp) {
     return false;
 }
 
+if (personalia) {
+    nameElement.textContent =  user.name;
+    ageElement.textContent =  user.age;
+    favoriteGenreElement.textContent = " " + user.favoriteGenre;
+}
+
 
 function handleFormSubmit(event, isSignUp) {
     event.preventDefault();
@@ -146,11 +152,4 @@ if (deleteUserBtn) {
             window.location.href = "index.html";
         }
     });
-}
-// Get the "My Movies" container
-
-if (personalia) {
-    nameElement.textContent =  user.name;
-    ageElement.textContent =  user.age;
-    favoriteGenreElement.textContent = " " + user.favoriteGenre;
 }

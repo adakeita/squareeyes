@@ -22,6 +22,8 @@ const moviePrices = {
     373571: 15.50
 };
 
+
+//For BROWSEINDEX
 const [newMoviesContainer, yourMoviesContainer] = document.querySelectorAll(".browse_index_row");
 
 function createMovieCard(movie) {
@@ -58,7 +60,7 @@ async function fetchMovieData(movieId) {
 
 movieIds.forEach(async (movieId, index) => {
     const movie = await fetchMovieData(movieId);
-    
+
 
     if (!movie) {
         return;
@@ -80,6 +82,7 @@ movieIds.forEach(async (movieId, index) => {
     }
 });
 
+//ABOUTMOVIE
 window.addEventListener("load", () => {
     const params = new URLSearchParams(window.location.search);
     const movieId = params.get("id");

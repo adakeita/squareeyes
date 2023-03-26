@@ -1,5 +1,4 @@
-
-
+//I Dont know where else to put you for now.
 //FAQ
 const faq = document.querySelectorAll(".faq-question");
 
