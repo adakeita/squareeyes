@@ -3,16 +3,16 @@
 
 <head>
     <!-- Hotjar Tracking Code for my site -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3423891,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 3423891, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="title" content="Squareeyes">
@@ -31,21 +31,22 @@
 <body>
     <header>
         <nav id="navbar">
-            <a class="home" href="index.html">
-                <div class="logo_image_container">
+            <div class="logo_image_container">
+                <a class="home" href="index.html">
                     <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="blue logo SquareEyes">
-                </div>
-            </a>
+                </a>
+            </div>
+
             <ul class="navbar_links static menu default">
-                <li class="nav-item"><a class="menu-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
-                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
+                <li class="nav-item logged-in"><a class="menu-link" href="profile.html">PROFILE</a>
+                </li>
                 <li class="nav-item logged-in"><a class="menu-link" href="browseindex.html">BROWSE</a>
                 </li>
-                <li class="nav-item logged-in"><a class="menu-link" href="mymovies.html">MY MOVIES</a>
-                </li>
                 <li class="nav-item logged-out"><a class="menu-link" href="login.html">LOGIN</a></li>
-                <li class="nav-item"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
+                <li class="nav-item logged-out"><a class="menu-link" href="signup.html">SIGNUP</a></li>
+                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li class="nav-item"><a class="menu-link" href="community.html">COMMUNITY</a></li>
+                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
             </ul>
             <div class="button-container hide">
                 <button class="hamburger">
@@ -56,17 +57,20 @@
         </nav>
     </header>
     <main class="page-container">
+        <div class="header-buffer">
+
+        </div>
         <div class="signup">
             <h1 class="signup-header header_signup_login signup_header">Sign Up</h1>
-            <form>
+            <form id="signup-form">
                 <label class="label label_username" for="username">Username:</label>
-                <input class="signinout" type="text" id="username" name="username">
+                <input class="signinout" type="text" id="username" name="username" required>
 
                 <label class="label" for="name">Name:</label>
-                <input class="signinout" type="text" id="name" name="name" required>
+                <input class="signinout" type="text" id="name" name="name" autocomplete="on" required>
 
                 <label class="label" for="age">Age:</label>
-                <input class="signinout" type="number" id="age" name="age" required>
+                <input class="signinout" type="number" id="age" name="age" autocomplete="on" required>
 
                 <label class="label" for="favorite-genre">Favorite Movie Genre:</label>
                 <select class="signinout" id="favorite-genre" name="favorite-genre" required>
@@ -120,4 +124,5 @@
     </footer>
 
 </body>
+
 </html>

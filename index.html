@@ -32,11 +32,12 @@
 <body>
     <header>
         <nav id="navbar">
-            <a class="home" href="index.html">
-                <div class="logo_image_container">
+            <div class="logo_image_container">
+                <a class="home" href="index.html">
                     <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="blue logo SquareEyes">
-                </div>
-            </a>
+                </a>
+            </div>
+
             <ul class="navbar_links static menu default">
                 <li class="nav-item logged-in"><a class="menu-link" href="profile.html">PROFILE</a>
                 </li>
@@ -56,13 +57,15 @@
             </div>
         </nav>
     </header>
-    <div class="frontpage-content container">
-        <img class="main_img" src="./movies/moviemedley.png" alt="main-image man filming other man">
+
+    <main class="page-container">
+        <div class="index-main-wrapper">
+            <img class="main_img" src="./movies/moviemedley.png" alt="main-image man filming other man">
+        </div>
         <div class="index-image-content">
-            <h1 class="index-heading index-image-text index_text">
+            <h1 class="h1_header index-heading index-image-text index_text">
                 Discover interesting indie films and support small filmmakers.
             </h1>
-            <div class="index-image-buffer"></div>
             <div class="index-btns_loggedOut index-options" id="login-btns-container">
                 <div class="index-btn" id="login-btn">
                     <a href="login.html">
@@ -90,66 +93,73 @@
                 </div>
             </div>
         </div>
-
-        <main class="page-container">
-            <div class="stream_here">
-                <h2 class="index-heading download-header">Stream on all your devices</h2>
-                <div class="stream_column">
-                    <div class="stream_item">
-                        <h3 class="index-heading download-header">TV</h3>
+        <div class="index-image-buffer"></div>
+        <div class="stream_here">
+            <h2 class="index-heading download-header h2_header">Stream on all your devices</h2>
+            <div class="stream_column">
+                <div class="stream_item">
+                    <h3 class="stream-icon-item index-heading download-header">TV</h3>
+                    <div class="stream-icon-item  stream-image-wrapper">
                         <img class="stream_image" src="./iconsbuttons/tv.png" alt="tv-icon">
                     </div>
-                    <div class="stream_item">
-                        <h3 class="index-heading download-header">Laptop</h3>
+                </div>
+                <div class="stream_item">
+                    <h3 class="stream-icon-item index-heading download-header">Laptop</h3>
+                    <div class="stream-icon-item  stream-image-wrapper">
                         <img class="stream_image" src="./iconsbuttons/laptop.png" alt="laptop-icon">
                     </div>
-                    <div class="stream_item">
-                        <h3 class=" index-heading download-header">Console</h3>
+                </div>
+                <div class="stream_item">
+                    <h3 class="stream-icon-item index-heading download-header">Console</h3>
+                    <div class="stream-icon-item  stream-image-wrapper">
                         <img class="stream_image" src="./iconsbuttons/gaming.png" alt="console-icon">
                     </div>
-                    <div class="stream_item">
-                        <h3 class="index-heading download-header">Tablet</h3>
-                        <img class="stream_image" src="./iconsbuttons/tablet.png" alt="tablet/phone-icon">
+                </div>
+                <div class="stream_item">
+                    <h3 class="stream-icon-item index-heading download-header">Tablet</h3>
+                    <div class="stream-icon-item  stream-image-wrapper">
+                        <img class="stream_image" src="./iconsbuttons/tablet.png" alt="tablet-icon">
                     </div>
                 </div>
             </div>
-            <div class="download_wrapper">
-                <div class="download_element">
-                    <p class="download_text index_text">Download and watch offline.
-                        <br>
-                        Anytime. Anywhere.
-                    </p>
-                </div>
-                <div class="landscape_wrapper download_element">
-                    <img class="landscape_image" src="phonelandscape.png" alt="landscape phone">
-                </div>
+        </div>
+        <div class="download_wrapper">
+            <div class="download_element">
+                <p class="download_text index_text">Download and watch offline.
+                    <br>
+                    Anytime. Anywhere.
+                </p>
             </div>
-        </main>
-        <footer id="footer">
-            <div class="footer-content">
-                <div class="connect-socials footer-element">
-                    <a class="footer-links" href="https://www.whatsapp.com/">
-                        <img class="contact-icon" src="./iconsbuttons/telephone.png" alt="call">
-                        <p class="connect-p footer-p">Call Us</p>
-                    </a>
-                </div>
-
-                <div class="footer-attribution">
-                    <p class="attr-text vector-unsplash">This website uses images from <a
-                            href="https://unsplash.com/">Unsplash</a> and vector icons from <a
-                            href="https://www.flaticon.com/">Flaticon</a>.</p>
-                    <p class="noroff attr-text">This is a school project for Noroff School of Technology's Frontend
-                        class.</p>
-                </div>
-
-                <div class="connect-socials footer-element">
-                    <a class="footer-links" href="https://mail.google.com/">
-                        <img class="contact-icon" src="./iconsbuttons/email.png" alt="email us">
-                        <p class="connect-p footer-p">Email Us</p>
-                    </a>
-                </div>
+            <div class="landscape_wrapper download_element">
+                <img class="landscape_image" src="./images/phonelandscape.png" alt="landscape phone">
             </div>
-        </footer>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="connect-socials footer-element">
+                <a class="footer-links" href="https://www.whatsapp.com/">
+                    <img class="contact-icon" src="./iconsbuttons/telephone.png" alt="call">
+                    <p class="connect-p footer-p">Call Us</p>
+                </a>
+            </div>
+
+            <div class="footer-attribution">
+                <p class="attr-text vector-unsplash">This website uses images from <a
+                        href="https://unsplash.com/">Unsplash</a> and vector icons from <a
+                        href="https://www.flaticon.com/">Flaticon</a>.</p>
+                <p class="noroff attr-text">This is a school project for Noroff School of Technology's Frontend
+                    class.</p>
+            </div>
+
+            <div class="connect-socials footer-element">
+                <a class="footer-links" href="https://mail.google.com/">
+                    <img class="contact-icon" src="./iconsbuttons/email.png" alt="email us">
+                    <p class="connect-p footer-p">Email Us</p>
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

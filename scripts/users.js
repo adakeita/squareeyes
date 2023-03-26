@@ -4,6 +4,8 @@ const loginBtns = document.getElementById("login-btns-container");
 const loggedinBtns = document.getElementById("loggedin-btns-container");
 const btnsIsLoggedIn = document.querySelectorAll(".logged-in");
 const btnsIsLoggedOut = document.querySelectorAll(".logged-out");
+const loginForm = document.getElementById("login-form");
+const signUpForm = document.getElementById("signup-form");
 const username = document.getElementById("username");
 const users = JSON.parse(localStorage.getItem("users")) || {};
 let currentUser = localStorage.getItem("currentUser");
@@ -38,6 +40,7 @@ function updateUI() {
         btnsIsLoggedIn.forEach((btn) => btn.classList.add("hidden"));
     }
 }
+
 
 function authenticate(isSignUp) {
     const password = document.getElementById("password").value;
@@ -78,8 +81,6 @@ function authenticate(isSignUp) {
         }
 
         localStorage.setItem("users", JSON.stringify(users));
-
-        alert("Account created successfully!");
         window.location.href = "login.html";
         return true;
     }
@@ -91,7 +92,6 @@ function authenticate(isSignUp) {
 
     user = users[username.value];
     if (user && user.password === password) {
-        alert("Login successful!");
         currentUser = username.value;
         localStorage.setItem("currentUser", currentUser);
         window.location.href = "index.html";
@@ -108,6 +108,21 @@ function handleFormSubmit(event, isSignUp) {
     authenticate(isSignUp);
 }
 
+function handleFormKeypress(event, isSignUp) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        authenticate(isSignUp);
+    }
+}
+
+if (loginForm) {
+    loginForm.addEventListener("keypress", (event) => handleFormKeypress(event, false));
+}
+
+if (signUpForm) {
+    signUpForm.addEventListener("keypress", (event) => handleFormKeypress(event, true));
+}
+
 function logout() {
     localStorage.removeItem("currentUser");
     currentUser = null;
@@ -117,7 +132,7 @@ function logout() {
 
 if (deleteUserBtn) {
     deleteUserBtn.addEventListener("click", () => {
-        const confirmed = confirm("Are you sure you want to delete your user account? This cannot be undone.");
+        const confirmed = confirm("Are you sure you want to delete your user account? You will loose all your movies.");
 
         if (confirmed) {
             // Delete user data from local storage
@@ -132,12 +147,10 @@ if (deleteUserBtn) {
         }
     });
 }
-
-
 // Get the "My Movies" container
 
 if (personalia) {
-    nameElement.textContent = user.name;
-    ageElement.textContent = user.age;
-    favoriteGenreElement.textContent = user.favoriteGenre;
+    nameElement.textContent =  user.name;
+    ageElement.textContent =  user.age;
+    favoriteGenreElement.textContent = " " + user.favoriteGenre;
 }

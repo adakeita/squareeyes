@@ -31,21 +31,22 @@
 <body>
     <header>
         <nav id="navbar">
-            <a class="home" href="index.html">
-                <div class="logo_image_container">
+            <div class="logo_image_container">
+                <a class="home" href="index.html">
                     <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="blue logo SquareEyes">
-                </div>
-            </a>
+                </a>
+            </div>
+
             <ul class="navbar_links static menu default">
-                <li class="nav-item"><a class="menu-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
-                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
+                <li class="nav-item logged-in"><a class="menu-link" href="profile.html">PROFILE</a>
+                </li>
                 <li class="nav-item logged-in"><a class="menu-link" href="browseindex.html">BROWSE</a>
                 </li>
-                <li class="nav-item logged-in"><a class="menu-link" href="mymovies.html">MY MOVIES</a>
-                </li>
+                <li class="nav-item logged-out"><a class="menu-link" href="login.html">LOGIN</a></li>
                 <li class="nav-item logged-out"><a class="menu-link" href="signup.html">SIGNUP</a></li>
-                <li class="nav-item"><a class="menu-link" href="community.html">OUR COMMUNITY</a></li>
+                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li class="nav-item"><a class="menu-link" href="community.html">COMMUNITY</a></li>
+                <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
             </ul>
             <div class="button-container hide">
                 <button class="hamburger">
@@ -56,18 +57,21 @@
         </nav>
     </header>
     <main class="page-container">
+        <div class="header-buffer">
+            
+        </div>
         <div class="login">
             <h1 class="header login-header header_signup_login login-h1">Login</h1>
-            <form>
-                <label class="label username-label" for="username">Username:</label>
-                <input type="text" id="username" name="username"><br>
+            <form id="login-form">
+                <label class="label username-label" for="username" autocomplete="on">Username:</label>
+                <input class="signinout" type="text" id="username" name="username">
 
-                <label class="label password-label" for="password">Password:</label>
-                <input type="password" id="password" name="password"><br>
+                <label class="label password-label" for="password" autocomplete="current-password">Password:</label>
+                <input class="signinout" type="password" id="password" name="password"><br>
 
                 <input class="btn_signup_login login-btn login_btn" type="button" value="Log In"
                     onclick="authenticate(false)">
-                <input class="btn_signup_login login_btn login-btn" type="button" value="Join Our Community"
+                <input class="btn_signup_login login_btn login-btn" type="button" value="New User"
                     onclick="location.href='signup.html'">
             </form>
         </div>

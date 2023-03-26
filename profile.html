@@ -35,15 +35,20 @@
 <body>
     <header>
         <nav id="navbar">
-            <a class="home" href="index.html">
-                <div class="logo_image_container">
+            <div class="logo_image_container">
+                <a class="home" href="index.html">
                     <img class="logo logoimage" src="./logooptions/logo-white-blue.png" alt="blue logo SquareEyes">
-                </div>
-            </a>
+                </a>
+            </div>
+
             <ul class="navbar_links static menu default">
-                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
+                <li class="nav-item logged-in"><a class="menu-link" href="profile.html">PROFILE</a>
+                </li>
                 <li class="nav-item logged-in"><a class="menu-link" href="browseindex.html">BROWSE</a>
                 </li>
+                <li class="nav-item logged-out"><a class="menu-link" href="login.html">LOGIN</a></li>
+                <li class="nav-item logged-out"><a class="menu-link" href="signup.html">SIGNUP</a></li>
+                <li class="nav-item"><a class="menu-link" href="about.html">ABOUT</a></li>
                 <li class="nav-item"><a class="menu-link" href="community.html">COMMUNITY</a></li>
                 <li id="logout-btn" class="nav-item"><a class="menu-link" href="#" onClick="logout()">LOGOUT</a></li>
             </ul>
@@ -56,6 +61,9 @@
         </nav>
     </header>
     <main class="content-container">
+        <div class="header-buffer">
+
+        </div>
         <div class="profile-header">
             <h1 class="profile-h1 header-element">MY PROFILE</h1>
             <div class="view-cart-container">
@@ -71,14 +79,14 @@
                 <img class="profile_avatar" src="./images/profile.png" alt="profile avatar">
             </div>
             <div class="profile-element personalia">
-                <p class="personalia-text">Name: <span id="name"></span></p>
-                <p class="personalia-text">Age: <span id="age"></span></p>
-                <p class="personalia-text">Favorite Genre: <span id="favorite-genre"></span></p>
+                <p class="personalia-text">Name: <span id="name"> </span></p>
+                <p class="personalia-text">Age: <span id="age"> </span></p>
+                <p class="personalia-text">Favorite Genre: <span id="favorite-genre"> </span></p>
             </div>
         </div>
         <div class="my-movie-wrapper">
             <div class="my-movies-header">
-                <h2>My Movies</h2>
+                <h2 class="h2_header">MY MOVIES</h2>
             </div>
             <div id="myMovies" class="my-movies profile-page">
 
@@ -98,7 +106,7 @@
                 <button class="checkout-btn">Checkout</button>
             </div>
         </div>
-        <button id="deleteUserBtn" class="logged-in delete-btn">Delete User</button>
+        <button id="deleteUserBtn" class="logged-in delete-btn">DELETE USER</button>
     </main>
     <footer id="footer">
         <div class="footer-content">
