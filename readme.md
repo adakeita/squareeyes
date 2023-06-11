@@ -3,7 +3,7 @@ ABOUT THIS PROJECT
 
 SquareEyes
 
-![Model](Paste_link_here)
+![Model](https://github.com/adakeita/squareeyes/blob/main/screenshot-square-png.png)
 
 SquareEyes is a website offering movie enthusiasts to buy their favourite movies and discover new ones, with an emphasis on indie movies. The site includes functional login, shopping basket, and a profile's inventory.
 
