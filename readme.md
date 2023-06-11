@@ -77,7 +77,7 @@ Installation:
 
 Clone repo from GitHub:
 
-{{git clone git@github.com:NoroffFEU/portfolio-1-example.git}}
+{{git clone https://github.com/adakeita/squareeyes.git}}
 
 
 
